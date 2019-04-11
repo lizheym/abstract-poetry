@@ -1,17 +1,22 @@
-<h1>New poem<h2>
+<%= render "nav" %>
 
-<%= form_for @poem do |form| %>
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-  </p>
+<div class="margin-10">
+  <h1>New poem</h1>
+  <%= form_for @poem do |form| %>
+    <div class="width-80">
+      <p>
+        <%= form.label :title %><br>
+        <%= form.text_field :title, :class => "width-40" %>
+      </p>
 
-  <p>
-    <%= form.label :text %><br>
-    <%= form.text_area :text %>
-  </p>
+      <p>
+        <%= form.label :text %><br>
+        <%= form.text_area :text, :class => "width-60 height-40" %>
+      </p>
 
-  <p>
-    <%= form.submit "Continue" %>
-  </p>
-<% end %>
+      <p>
+        <%= form.submit "Continue" %>
+      </p>
+    </div>
+  <% end %>
+</div>

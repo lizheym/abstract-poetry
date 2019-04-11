@@ -2,6 +2,10 @@ require 'rubygems'
 require 'engtagger'
 
 class PoemsController < ApplicationController
+  def index
+    @poems = Poem.all
+  end
+
   def new
     @poem = Poem.new
   end
@@ -15,21 +19,32 @@ class PoemsController < ApplicationController
 
   def show
     @poem = Poem.find(params[:id])
+
+    redirect_to "/poems"
+  end
+
+  def delete
+    @poem = Poem.find(params[:poem_id])
+    @poem.destroy
+
+    redirect_to poems_path
   end
 
   def cycle
     @poem = Poem.find(params[:poem_id])
     @cycle_num = params[:count]
 
-    tgr = EngTagger.new
-    raw_text = @poem.text
-    tagged = tgr.add_tags(raw_text)
-    nouns_in_order = _get_nouns_in_order(tagged)
-    with_placeholders = _replace_nouns_with_placeholders(raw_text, nouns_in_order)
-    cycled_nouns = _cycle_nouns(nouns_in_order, 1)
-    text_with_nouns_cycled = _replace_placeholders_with_nouns(with_placeholders, cycled_nouns)
+    if @poem.text.presence
+      tgr = EngTagger.new
+      raw_text = @poem.text
+      tagged = tgr.add_tags(raw_text)
+      nouns_in_order = _get_nouns_in_order(tagged)
+      with_placeholders = _replace_nouns_with_placeholders(raw_text, nouns_in_order)
+      cycled_nouns = _cycle_nouns(nouns_in_order, 1)
+      text_with_nouns_cycled = _replace_placeholders_with_nouns(with_placeholders, cycled_nouns)
 
-    @poem.update(:text => text_with_nouns_cycled)
+      @poem.update(:text => text_with_nouns_cycled)
+    end
 
     redirect_to @poem
   end
