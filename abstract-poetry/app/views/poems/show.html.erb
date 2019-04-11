@@ -5,5 +5,10 @@
 
 <p>
   <strong>Text:</strong>
-  <%= @poem.text %>
+  <%= @poem.text.html_safe %>
 </p>
+
+<%= form_tag poem_cycle_path(@poem.id), method: :post do %>
+  <%= select_tag "count", "<option>1</option><option>2</option><option>3</option><option>4</option>".html_safe %>
+  <%= submit_tag 'Cycle nouns' %>
+<% end %>

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     get "new"
     post "create"
     get "show"
+    post "cycle"
   end
 
   root 'poems#new'
