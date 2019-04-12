@@ -1,6 +1,6 @@
 <%= render "nav" %>
 
-<h1 class="center">All poems</h1>
+<h1 class="center my-3">All poems</h1>
 
 <table class="table table-striped">
   <thead>
@@ -16,9 +16,11 @@
     <% @poems.each do |poem| %>
       <tr>
         <td><%= poem.title %></td>
-        <td><%= simple_format(poem.text).html_safe %></td>
+        <td class="poem">
+          <%= simple_format(poem.text).html_safe %>
+        </td>
         <td><%= link_to 'Show', poem_path(poem) %></td>
-        <td><%= link_to 'Delete', poem_delete_path(poem) %></td>
+        <td class="padding-sides"><%= link_to 'Delete', poem_delete_path(poem) %></td>
       </tr>
     <% end %>
   </tbody>

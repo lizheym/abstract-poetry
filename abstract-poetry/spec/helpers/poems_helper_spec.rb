@@ -36,54 +36,80 @@ class PoemsHelperTest < ActionDispatch::IntegrationTest
       end
     end
 
-    describe ".replace_placeholders_with_nouns" do
-      context "with no nouns" do
-        it "returns the original text" do
-          expect(PoemsHelper.replace_placeholders_with_nouns("Pretty pretty pretty", [])).to eq("Pretty pretty pretty")
+    describe ".fix_articles" do
+      context "with no articles" do
+        it "is empty" do
+          expect(PoemsHelper.fix_articles("I love apples")).to eq("I love apples")
         end
       end
 
-      context "with a noun" do
-        it "returns the text with the noun replaced" do
-          expect(PoemsHelper.replace_placeholders_with_nouns("A good #{PoemsHelper::PLACEHOLDER}", ["doggie"])).to eq("A good doggie")
+      context "with the correct articles" do
+        it "is the articles" do
+          expect(PoemsHelper.fix_articles("An apple a day")).to eq("An apple a day")
         end
       end
 
-      context "with a multiple nouns" do
-        it "returns the text with nouns replaced" do
-          expect(PoemsHelper.replace_placeholders_with_nouns("A good #{PoemsHelper::PLACEHOLDER} and #{PoemsHelper::PLACEHOLDER}", ["doggie", "kittie"])).to eq("A good doggie and kittie")
+      context "with partially correct articles" do
+        it "is the correct articles" do
+          expect(PoemsHelper.fix_articles("A apple a day")).to eq("An apple a day")
         end
       end
 
-      context "with a repeated noun" do
-        it "returns the text with nouns replaced" do
-          expect(PoemsHelper.replace_placeholders_with_nouns("A good #{PoemsHelper::PLACEHOLDER} and #{PoemsHelper::PLACEHOLDER}", ["doggie", "doggie"])).to eq("A good doggie and doggie")
+      context "with incorrect articles" do
+        it "is the correct articles" do
+          expect(PoemsHelper.fix_articles("A apple an day")).to eq("An apple a day")
         end
       end
     end
 
-    describe ".replace_nouns_with_placeholders" do
+    describe ".replace_placeholders_with_words" do
       context "with no nouns" do
         it "returns the original text" do
-          expect(PoemsHelper.replace_nouns_with_placeholders("Pretty pretty pretty", [])).to eq("Pretty pretty pretty")
+          expect(PoemsHelper.replace_placeholders_with_words("Pretty pretty pretty", [])).to eq("Pretty pretty pretty")
         end
       end
 
       context "with a noun" do
         it "returns the text with the noun replaced" do
-          expect(PoemsHelper.replace_nouns_with_placeholders("A good doggie", ["doggie"])).to eq("A good #{PoemsHelper::PLACEHOLDER}")
+          expect(PoemsHelper.replace_placeholders_with_words("A good #{PoemsHelper::PLACEHOLDER}", ["doggie"])).to eq("A good doggie")
         end
       end
 
       context "with a multiple nouns" do
         it "returns the text with nouns replaced" do
-          expect(PoemsHelper.replace_nouns_with_placeholders("A good doggie and kittie", ["doggie", "kittie"])).to eq("A good #{PoemsHelper::PLACEHOLDER} and #{PoemsHelper::PLACEHOLDER}")
+          expect(PoemsHelper.replace_placeholders_with_words("A good #{PoemsHelper::PLACEHOLDER} and #{PoemsHelper::PLACEHOLDER}", ["doggie", "kittie"])).to eq("A good doggie and kittie")
         end
       end
 
       context "with a repeated noun" do
         it "returns the text with nouns replaced" do
-          expect(PoemsHelper.replace_nouns_with_placeholders("A good doggie and doggie", ["doggie", "doggie"])).to eq("A good #{PoemsHelper::PLACEHOLDER} and #{PoemsHelper::PLACEHOLDER}")
+          expect(PoemsHelper.replace_placeholders_with_words("A good #{PoemsHelper::PLACEHOLDER} and #{PoemsHelper::PLACEHOLDER}", ["doggie", "doggie"])).to eq("A good doggie and doggie")
+        end
+      end
+    end
+
+    describe ".replace_words_with_placeholders" do
+      context "with no nouns" do
+        it "returns the original text" do
+          expect(PoemsHelper.replace_words_with_placeholders("Pretty pretty pretty", [])).to eq("Pretty pretty pretty")
+        end
+      end
+
+      context "with a noun" do
+        it "returns the text with the noun replaced" do
+          expect(PoemsHelper.replace_words_with_placeholders("A good doggie", ["doggie"])).to eq("A good #{PoemsHelper::PLACEHOLDER}")
+        end
+      end
+
+      context "with a multiple nouns" do
+        it "returns the text with nouns replaced" do
+          expect(PoemsHelper.replace_words_with_placeholders("A good doggie and kittie", ["doggie", "kittie"])).to eq("A good #{PoemsHelper::PLACEHOLDER} and #{PoemsHelper::PLACEHOLDER}")
+        end
+      end
+
+      context "with a repeated noun" do
+        it "returns the text with nouns replaced" do
+          expect(PoemsHelper.replace_words_with_placeholders("A good doggie and doggie", ["doggie", "doggie"])).to eq("A good #{PoemsHelper::PLACEHOLDER} and #{PoemsHelper::PLACEHOLDER}")
         end
       end
     end
@@ -134,6 +160,46 @@ class PoemsHelperTest < ActionDispatch::IntegrationTest
       context "with a quotation mark" do
         it "doesn't include the noun enclosed in quotes" do
           expect(PoemsHelper.get_nouns_in_order("Birds say \"dog.\"")).to eq(["Birds"])
+        end
+      end
+    end
+
+    describe ".get_articles_in_order" do
+      context "with no articles" do
+        it "is empty" do
+          expect(PoemsHelper.get_articles_in_order("I love apples")).to eq([])
+        end
+      end
+
+      context "with articles" do
+        it "is the articles in order" do
+          expect(PoemsHelper.get_articles_in_order("An apple a day")).to eq(["An", "a"])
+        end
+      end
+    end
+
+    describe ".get_correct_articles" do
+      context "with no articles" do
+        it "is empty" do
+          expect(PoemsHelper.get_correct_articles("I love apples")).to eq([])
+        end
+      end
+
+      context "with the correct articles" do
+        it "is the articles" do
+          expect(PoemsHelper.get_correct_articles("An apple a day")).to eq(["An", "a"])
+        end
+      end
+
+      context "with partially correct articles" do
+        it "is the correct articles" do
+          expect(PoemsHelper.get_correct_articles("A apple a day")).to eq(["An", "a"])
+        end
+      end
+
+      context "with incorrect articles" do
+        it "is the correct articles" do
+          expect(PoemsHelper.get_correct_articles("A apple an day")).to eq(["An", "a"])
         end
       end
     end
