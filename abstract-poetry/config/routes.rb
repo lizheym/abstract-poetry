@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     post "create"
     get "show"
     post "cycle"
+    post "shuffle"
     get "delete"
   end
 

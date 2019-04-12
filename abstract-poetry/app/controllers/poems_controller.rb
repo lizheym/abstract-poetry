@@ -53,11 +53,37 @@ class PoemsController < ApplicationController
     redirect_to @poem
   end
 
+  def shuffle
+    config.logger = Logger.new(STDOUT)
+
+    @poem = Poem.find(params[:poem_id])
+    @cycle_num = params[:count]
+
+    if @poem.text.presence
+      tgr = EngTagger.new
+      raw_text = @poem.text
+      tagged = tgr.add_tags(raw_text)
+      nouns_in_order = _get_nouns_in_order(tagged)
+      logger.info nouns_in_order.join(", ")
+      with_placeholders = _replace_nouns_with_placeholders(raw_text, nouns_in_order)
+      shuffled_nouns = _shuffle_nouns(nouns_in_order)
+      text_with_nouns_cycled = _replace_placeholders_with_nouns(with_placeholders, shuffled_nouns)
+
+      @poem.update(:text => text_with_nouns_cycled)
+    end
+
+    redirect_to @poem
+  end
+
   private
 
   def _cycle_nouns(nouns, count)
     count = -count
     nouns.rotate(count)
+  end
+
+  def _shuffle_nouns(nouns)
+    nouns.shuffle
   end
 
   def _replace_placeholders_with_nouns(text, nouns)
@@ -81,6 +107,7 @@ class PoemsController < ApplicationController
       if _is_noun?(token)
         logger.info token
         noun = ActionView::Base.full_sanitizer.sanitize(token)
+        logger.info noun
         #if the last character is puncutation, remove it
         if ["—", ".", "-", ";"].any? { |char| noun[-1] == char }
           noun = noun[0...-1]

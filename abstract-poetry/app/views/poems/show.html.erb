@@ -9,7 +9,14 @@
     <%= simple_format(@poem.text).html_safe %>
   </p>
 
-  <%= form_tag poem_cycle_path(@poem.id), method: :post do %>
-    <%= submit_tag 'Cycle nouns' %>
-  <% end %>
+  <div class="margin-vertical">
+    <%= form_tag poem_cycle_path(@poem.id), method: :post do %>
+      <%= submit_tag 'Cycle nouns' %>
+    <% end %>
+  </div>
+  <div class="margin-vertical">
+    <%= form_tag poem_shuffle_path(@poem.id), method: :post  do %>
+      <%= submit_tag 'Shuffle nouns' %>
+    <% end %>
+  </div>
 </div>
