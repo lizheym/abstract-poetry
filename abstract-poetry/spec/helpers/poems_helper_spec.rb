@@ -30,9 +30,9 @@ class PoemsHelperTest < ActionDispatch::IntegrationTest
       end
     end
 
-    describe ".cycle_noun_array" do
+    describe ".cycle_array" do
       it "moves each element forward one position" do
-        expect(PoemsHelper.cycle_noun_array(["a", "b", "c"])).to eq(["c", "a", "b"])
+        expect(PoemsHelper.cycle_array(["a", "b", "c"])).to eq(["c", "a", "b"])
       end
     end
 
@@ -114,52 +114,54 @@ class PoemsHelperTest < ActionDispatch::IntegrationTest
       end
     end
 
-    describe ".get_nouns_in_order" do
-      context "with a simple sentence" do
-        it "returns the nouns in order" do
-          expect(PoemsHelper.get_nouns_in_order("I gave my dog a gift for the holiday.")).to eq(["dog", "gift", "holiday"])
+    describe ".get_words_in_order_by_part_of_speech" do
+      context "nouns" do
+        context "with a simple sentence" do
+          it "returns the nouns in order" do
+            expect(PoemsHelper.get_words_in_order_by_part_of_speech("I gave my dog a gift for the holiday.", PoemsHelper::NOUN_LIST)).to eq(["dog", "gift", "holiday"])
+          end
         end
-      end
 
-      context "with proper nouns" do
-        it "returns the nouns in order" do
-          expect(PoemsHelper.get_nouns_in_order("I gave Katie a gift for the holiday.")).to eq(["Katie", "gift", "holiday"])
+        context "with proper nouns" do
+          it "returns the nouns in order" do
+            expect(PoemsHelper.get_words_in_order_by_part_of_speech("I gave Katie a gift for the holiday.", PoemsHelper::NOUN_LIST)).to eq(["Katie", "gift", "holiday"])
+          end
         end
-      end
 
-      context "with multiple sentences" do
-        it "returns the nouns in order" do
-          expect(PoemsHelper.get_nouns_in_order("I gave Katie a gift for the holiday. She liked the shirt I gave her, but she wished it were a computer.")).to eq(["Katie", "gift", "holiday", "shirt", "computer"])
+        context "with multiple sentences" do
+          it "returns the nouns in order" do
+            expect(PoemsHelper.get_words_in_order_by_part_of_speech("I gave Katie a gift for the holiday. She liked the shirt I gave her, but she wished it were a computer.", PoemsHelper::NOUN_LIST)).to eq(["Katie", "gift", "holiday", "shirt", "computer"])
+          end
         end
-      end
 
-      context "with a repeated noun" do
-        it "returns the nouns in order" do
-          expect(PoemsHelper.get_nouns_in_order("I love my cat. What a good cat.")).to eq(["cat", "cat"])
+        context "with a repeated noun" do
+          it "returns the nouns in order" do
+            expect(PoemsHelper.get_words_in_order_by_part_of_speech("I love my cat. What a good cat.", PoemsHelper::NOUN_LIST)).to eq(["cat", "cat"])
+          end
         end
-      end
 
-      context "with an em dash" do
-        it "returns the nouns in order" do
-          expect(PoemsHelper.get_nouns_in_order("Birds fly quickly—birds with wings.")).to eq(["Birds", "birds", "wings"])
+        context "with an em dash" do
+          it "returns the nouns in order" do
+            expect(PoemsHelper.get_words_in_order_by_part_of_speech("Birds fly quickly—birds with wings.", PoemsHelper::NOUN_LIST)).to eq(["Birds", "birds", "wings"])
+          end
         end
-      end
 
-      context "with a dash" do
-        it "returns the nouns in order" do
-          expect(PoemsHelper.get_nouns_in_order("Like quick-silver.")).to eq(["silver"])
+        context "with a dash" do
+          it "returns the nouns in order" do
+            expect(PoemsHelper.get_words_in_order_by_part_of_speech("Like quick-silver.", PoemsHelper::NOUN_LIST)).to eq(["silver"])
+          end
         end
-      end
 
-      context "with a semicolon" do
-        it "returns the nouns in order" do
-          expect(PoemsHelper.get_nouns_in_order("I like my birds; they have wings.")).to eq(["birds", "wings"])
+        context "with a semicolon" do
+          it "returns the nouns in order" do
+            expect(PoemsHelper.get_words_in_order_by_part_of_speech("I like my birds; they have wings.", PoemsHelper::NOUN_LIST)).to eq(["birds", "wings"])
+          end
         end
-      end
 
-      context "with a quotation mark" do
-        it "doesn't include the noun enclosed in quotes" do
-          expect(PoemsHelper.get_nouns_in_order("Birds say \"dog.\"")).to eq(["Birds"])
+        context "with a quotation mark" do
+          it "doesn't include the noun enclosed in quotes" do
+            expect(PoemsHelper.get_words_in_order_by_part_of_speech("Birds say \"dog.\"", PoemsHelper::NOUN_LIST)).to eq(["Birds"])
+          end
         end
       end
     end

@@ -9,14 +9,40 @@
     <%= simple_format(@poem.text).html_safe %>
   </p>
 
-  <div class="margin-vertical">
-    <%= form_tag poem_cycle_path(@poem.id), method: :post do %>
-      <%= submit_tag 'Cycle nouns', :class => "btn btn-outline-secondary" %>
-    <% end %>
-  </div>
-  <div class="margin-vertical">
-    <%= form_tag poem_shuffle_path(@poem.id), method: :post  do %>
-      <%= submit_tag 'Shuffle nouns', :class => "btn btn-outline-secondary" %>
-    <% end %>
-  </div>
+  <table>
+    <thead>
+      <tr>
+        <td>
+          <div class="margin-vertical">
+            <%= form_tag poem_cycle_nouns_path(@poem.id), method: :post do %>
+              <%= submit_tag 'Cycle nouns', :class => "btn btn-outline-secondary" %>
+            <% end %>
+          </div>
+        </td>
+        <td>
+          <div class="margin-vertical">
+            <%= form_tag poem_cycle_adjectives_path(@poem.id), method: :post do %>
+              <%= submit_tag 'Cycle adjectives', :class => "btn btn-outline-secondary" %>
+            <% end %>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="margin-vertical">
+            <%= form_tag poem_shuffle_nouns_path(@poem.id), method: :post  do %>
+              <%= submit_tag 'Shuffle nouns', :class => "btn btn-outline-secondary" %>
+            <% end %>
+          </div>
+        </td>
+        <td>
+          <div class="margin-vertical">
+            <%= form_tag poem_shuffle_adjectives_path(@poem.id), method: :post  do %>
+              <%= submit_tag 'Shuffle adjectives', :class => "btn btn-outline-secondary" %>
+            <% end %>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>

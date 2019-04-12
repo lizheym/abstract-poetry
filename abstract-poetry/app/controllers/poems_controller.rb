@@ -27,7 +27,7 @@ class PoemsController < ApplicationController
     redirect_to poems_path
   end
 
-  def cycle
+  def cycle_nouns
     @poem = Poem.find(params[:poem_id])
 
     if @poem.text.presence
@@ -37,11 +37,31 @@ class PoemsController < ApplicationController
     redirect_to @poem
   end
 
-  def shuffle
+  def shuffle_nouns
     @poem = Poem.find(params[:poem_id])
 
     if @poem.text.presence
       @poem.update(:text => PoemsHelper.shuffle_nouns_in_text(@poem.text))
+    end
+
+    redirect_to @poem
+  end
+
+  def cycle_adjectives
+    @poem = Poem.find(params[:poem_id])
+
+    if @poem.text.presence
+      @poem.update(:text => PoemsHelper.cycle_adjectives_in_text(@poem.text))
+    end
+
+    redirect_to @poem
+  end
+
+  def shuffle_adjectives
+    @poem = Poem.find(params[:poem_id])
+
+    if @poem.text.presence
+      @poem.update(:text => PoemsHelper.shuffle_adjectives_in_text(@poem.text))
     end
 
     redirect_to @poem

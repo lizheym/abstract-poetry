@@ -2,20 +2,40 @@ require 'open-nlp'
 
 module PoemsHelper
   PLACEHOLDER = "XXXXXX".freeze
+  NOUN_LIST = ["NN", "NNP", "NNS", "NNPS"].freeze
+  ADJECTIVE_LIST = ["JJ", "JJR", "JJS"].freeze
+
+  def self.cycle_adjectives_in_text(text)
+    adjectives_in_order = self.get_words_in_order_by_part_of_speech(text, ADJECTIVE_LIST)
+    with_placeholders = self.replace_words_with_placeholders(text, adjectives_in_order)
+    cycled_adjectives = self.cycle_array(adjectives_in_order)
+    text = self.replace_placeholders_with_words(with_placeholders, cycled_adjectives)
+
+    self.fix_articles(text)
+  end
+
+  def self.shuffle_adjectives_in_text(text)
+    adjectives_in_order = self.get_words_in_order_by_part_of_speech(text, ADJECTIVE_LIST)
+    with_placeholders = self.replace_words_with_placeholders(text, adjectives_in_order)
+    shuffled_adjectives = self.shuffle_array(adjectives_in_order)
+    text = self.replace_placeholders_with_words(with_placeholders, shuffled_adjectives)
+
+    self.fix_articles(text)
+  end
 
   def self.cycle_nouns_in_text(text)
-    nouns_in_order = self.get_nouns_in_order(text)
+    nouns_in_order = self.get_words_in_order_by_part_of_speech(text, NOUN_LIST)
     with_placeholders = self.replace_words_with_placeholders(text, nouns_in_order)
-    cycled_nouns = self.cycle_noun_array(nouns_in_order)
+    cycled_nouns = self.cycle_array(nouns_in_order)
     text = self.replace_placeholders_with_words(with_placeholders, cycled_nouns)
 
     self.fix_articles(text)
   end
 
   def self.shuffle_nouns_in_text(text)
-    nouns_in_order = self.get_nouns_in_order(text)
+    nouns_in_order = self.get_words_in_order_by_part_of_speech(text, NOUN_LIST)
     with_placeholders = self.replace_words_with_placeholders(text, nouns_in_order)
-    shuffled_nouns = self.shuffle_noun_array(nouns_in_order)
+    shuffled_nouns = self.shuffle_array(nouns_in_order)
     text = self.replace_placeholders_with_words(with_placeholders, shuffled_nouns)
 
     self.fix_articles(text)
@@ -28,11 +48,11 @@ module PoemsHelper
     text = self.replace_placeholders_with_words(with_placeholders, correct_articles)
   end
 
-  def self.cycle_noun_array(nouns)
+  def self.cycle_array(nouns)
     nouns.rotate(-1)
   end
 
-  def self.shuffle_noun_array(nouns)
+  def self.shuffle_array(nouns)
     nouns.shuffle
   end
 
@@ -50,7 +70,7 @@ module PoemsHelper
     text
   end
 
-  def self.get_nouns_in_order(string)
+  def self.get_words_in_order_by_part_of_speech(string, parts_of_speech)
     OpenNLP.load
     tokenizer = OpenNLP::TokenizerME.new
     tagger = OpenNLP::POSTaggerME.new
@@ -62,7 +82,7 @@ module PoemsHelper
 
     tags = tagger.tag(tokens).to_a
 
-    tokens.select.with_index { |token, index| ["NN", "NNP", "NNS", "NNPS"].include?(tags[index]) && is_alpha?(token) }
+    tokens.select.with_index { |token, index| parts_of_speech.include?(tags[index]) && is_alpha?(token) }
   end
 
   def self.get_articles_in_order(string)
