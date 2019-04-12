@@ -11,12 +11,12 @@
 
   <div class="margin-vertical">
     <%= form_tag poem_cycle_path(@poem.id), method: :post do %>
-      <%= submit_tag 'Cycle nouns' %>
+      <%= submit_tag 'Cycle nouns', :class => "btn btn-outline-secondary" %>
     <% end %>
   </div>
   <div class="margin-vertical">
     <%= form_tag poem_shuffle_path(@poem.id), method: :post  do %>
-      <%= submit_tag 'Shuffle nouns' %>
+      <%= submit_tag 'Shuffle nouns', :class => "btn btn-outline-secondary" %>
     <% end %>
   </div>
 </div>
