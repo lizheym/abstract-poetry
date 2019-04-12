@@ -47,9 +47,14 @@ module PoemsHelper
     tokens = tokenizer.tokenize(string).to_a
     tokens = tokens.map { |word| word.split("-") }.flatten # dash
     tokens = tokens.map { |word| word.split("—") }.flatten # em dash
+    tokens = tokens.map { |word| word.split(".") }.flatten # em dash
 
     tags = tagger.tag(tokens).to_a
 
-    tokens.select.with_index { |token, index| ["NN", "NNP", "NNS"].include?(tags[index]) }
+    tokens.select.with_index { |token, index| ["NN", "NNP", "NNS"].include?(tags[index]) && is_alpha?(token) }
+  end
+
+  def self.is_alpha?(string)
+    string.match?(/^[[:alpha:]]+$/)
   end
 end

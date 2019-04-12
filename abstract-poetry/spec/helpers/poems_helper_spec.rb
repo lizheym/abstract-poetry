@@ -130,6 +130,38 @@ class PoemsHelperTest < ActionDispatch::IntegrationTest
           expect(PoemsHelper.get_nouns_in_order("I like my birds; they have wings.")).to eq(["birds", "wings"])
         end
       end
+
+      context "with a quotation mark" do
+        it "doesn't include the noun enclosed in quotes" do
+          expect(PoemsHelper.get_nouns_in_order("Birds say \"dog.\"")).to eq(["Birds"])
+        end
+      end
+    end
+
+    describe ".is_alpha?" do
+      context "with all lowercase letters" do
+        it "is true" do
+          expect(PoemsHelper.is_alpha?("abcd")).to be true
+        end
+      end
+
+      context " with uppercase and lowercase letters" do
+        it "is true" do
+          expect(PoemsHelper.is_alpha?("abcdABCD")).to be true
+        end
+      end
+
+      context "with spaces" do
+        it "is false" do
+          expect(PoemsHelper.is_alpha?("abcd ABCD")).to be false
+        end
+      end
+
+      context "with special characters" do
+        it "is false" do
+          expect(PoemsHelper.is_alpha?("abcdABCD!!$$")).to be false
+        end
+      end
     end
   end
 end
