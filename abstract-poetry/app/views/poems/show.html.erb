@@ -1,13 +1,21 @@
+<%= javascript_include_tag "application" %>
+
 <%= render "nav" %>
 
 <div class="margin-10">
-  <p>
-    <h3><%= @poem.title %></h3>
-  </p>
 
-  <p>
-    <%= simple_format(@poem.text).html_safe %>
-  </p>
+  <div class="container ml-0">
+    <div class="row">
+      <div class="col-6">
+        <h3><%= @poem.title %></h3>
+        <%= simple_format(@poem.text).html_safe %>
+      </div>
+      <div id="originalPoem" style="display: none;" class="col-6">
+        <h3><%= @poem.title %></h3>
+        <%= simple_format(@poem.original).html_safe %>
+      </div>
+    </div>
+  </div>
 
   <table>
     <thead>
@@ -40,6 +48,13 @@
             <%= form_tag poem_shuffle_adjectives_path(@poem.id), method: :post  do %>
               <%= submit_tag 'Shuffle adjectives', :class => "btn btn-outline-secondary" %>
             <% end %>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="margin-vertical">
+            <button onclick="showHideOriginalPoem()" class="btn btn-outline-secondary" id="showOriginalPoem">Show Original</button>
           </div>
         </td>
       </tr>

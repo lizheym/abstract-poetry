@@ -11,6 +11,7 @@ class PoemsController < ApplicationController
 
   def create
     @poem = Poem.new(params.require(:poem).permit(:title, :text))
+    @poem.update(:original => @poem.text)
 
     @poem.save
     redirect_to @poem
