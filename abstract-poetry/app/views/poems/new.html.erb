@@ -1,17 +1,17 @@
 <%= render "nav" %>
 
-<div class="margin-10">
+<div class="margin-10" style="margin-left:20%; margin-right:20%;">
   <h1>New poem</h1>
   <%= form_for @poem do |form| %>
-    <div class="width-80">
+    <div >
       <p>
         <%= form.label :title %><br>
-        <%= form.text_field :title, :class => "width-40" %>
+        <%= form.text_field :title, :class => "form-control" %>
       </p>
 
       <p>
         <%= form.label :text %><br>
-        <%= form.text_area :text, :class => "width-60 height-40" %>
+        <%= form.text_area :text, :class => "form-control" %>
       </p>
 
       <p>
