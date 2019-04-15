@@ -9572,3 +9572,1534 @@ Processing by PoemsController#show as HTML
 Completed 200 OK in 34ms (Views: 31.4ms | ActiveRecord: 0.1ms)
 
 
+Started GET "/poems/17" for ::1 at 2019-04-15 13:37:03 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.2ms)
+  Rendered poems/show.html.erb within layouts/application (206.6ms)
+Completed 200 OK in 252ms (Views: 235.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/poems/17/cycle_lines" for ::1 at 2019-04-15 13:37:06 -0400
+Processing by PoemsController#cycle_lines as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lputQ8gWmcfIv62PWgqxFWcbWXHrNWxWN+eLZiXZM1Si1LlovnW8l0GPSm6uyAXjp7Itbvr7seHYWukmstkgkw==", "commit"=>"Cycle lines", "poem_id"=>"17"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:72
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:75
+  [1m[36mPoem Update (0.7ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "wind to be on its tails.\r\nDon’t you imagine the evening longing now\r\nhow comfortable it will be to touch\r\nthe firewood instead of the\r\nway of the dream and the endless\r\nleaves of earth? And don’t you think\r\nthe nothingness, especially those with\r\nmossy air, are beginning to look for\r\n \r\nthe freshets that will come—six, a hollows—to sleep\r\ninside their wind? And don’t you hear\r\nthe trees birds dozen,\r\nthe bodies being crowned with the first\r\ngoldenrod of whispering? The goodbye\r\neverlasting and the white tuffets over which\r\nthe snow runs so quickly brings out\r\nits long blue pond. The stiffens wags\r\nits many field. And in the fox\r\nthe piled shadows shifts a little\r\n"], ["updated_at", "2019-04-15 17:37:06.886469"], ["id", 17]]
+  ↳ app/controllers/poems_controller.rb:75
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:75
+Redirected to http://localhost:3000/poems/17
+Completed 302 Found in 9ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/poems/17" for ::1 at 2019-04-15 13:37:06 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.3ms)
+  Rendered poems/show.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 62ms (Views: 59.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/poems/17/cycle_lines" for ::1 at 2019-04-15 13:37:07 -0400
+Processing by PoemsController#cycle_lines as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"P9mbqCka/QQcd3XSD96XD0EiysQNowEa1ZTwROrNKGcLlo+DX3nYVJVHkjP7HCP5gYu+2xxt3K06KZIEfc07oA==", "commit"=>"Cycle lines", "poem_id"=>"17"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:72
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:75
+  [1m[36mPoem Update (0.3ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "the piled shadows shifts a little\r\nwind to be on its tails.\r\nDon’t you imagine the evening longing now\r\nhow comfortable it will be to touch\r\nthe firewood instead of the\r\nway of the dream and the endless\r\nleaves of earth? And don’t you think\r\nthe nothingness, especially those with\r\nmossy air, are beginning to look for\r\n \r\nthe freshets that will come—six, a hollows—to sleep\r\ninside their wind? And don’t you hear\r\nthe trees birds dozen,\r\nthe bodies being crowned with the first\r\ngoldenrod of whispering? The goodbye\r\neverlasting and the white tuffets over which\r\nthe snow runs so quickly brings out\r\nits long blue pond. The stiffens wags\r\nits many field. And in the fox\r\n"], ["updated_at", "2019-04-15 17:37:07.668776"], ["id", 17]]
+  ↳ app/controllers/poems_controller.rb:75
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:75
+Redirected to http://localhost:3000/poems/17
+Completed 302 Found in 14ms (ActiveRecord: 7.1ms)
+
+
+Started GET "/poems/17" for ::1 at 2019-04-15 13:37:07 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.4ms)
+  Rendered poems/show.html.erb within layouts/application (20.7ms)
+Completed 200 OK in 47ms (Views: 44.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/poems/17/cycle_lines" for ::1 at 2019-04-15 13:37:08 -0400
+Processing by PoemsController#cycle_lines as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Z8xyyK5za6ds6eirkRHkGPGp41N092ENRSHBRfl40qNTg2bj2BBO9+XZD0pl01DuMQCXTGU5vLqqnKMFbnjBZA==", "commit"=>"Cycle lines", "poem_id"=>"17"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:72
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:75
+  [1m[36mPoem Update (0.3ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "its many field. And in the fox\r\nthe piled shadows shifts a little\r\nwind to be on its tails.\r\nDon’t you imagine the evening longing now\r\nhow comfortable it will be to touch\r\nthe firewood instead of the\r\nway of the dream and the endless\r\nleaves of earth? And don’t you think\r\nthe nothingness, especially those with\r\nmossy air, are beginning to look for\r\n \r\nthe freshets that will come—six, a hollows—to sleep\r\ninside their wind? And don’t you hear\r\nthe trees birds dozen,\r\nthe bodies being crowned with the first\r\ngoldenrod of whispering? The goodbye\r\neverlasting and the white tuffets over which\r\nthe snow runs so quickly brings out\r\nits long blue pond. The stiffens wags\r\n"], ["updated_at", "2019-04-15 17:37:08.240079"], ["id", 17]]
+  ↳ app/controllers/poems_controller.rb:75
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:75
+Redirected to http://localhost:3000/poems/17
+Completed 302 Found in 7ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/poems/17" for ::1 at 2019-04-15 13:37:08 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mPoem Load (0.3ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.4ms)
+  Rendered poems/show.html.erb within layouts/application (36.3ms)
+Completed 200 OK in 69ms (Views: 64.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/poems/17/shuffle_lines" for ::1 at 2019-04-15 13:37:09 -0400
+Processing by PoemsController#shuffle_lines as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fNtuMHGzSlco07RONlNdOEUssqo1lfmH26oR9rO7aHFIlHobB9BvB6HjU6/CkenOhYXGtSRbJDA0F3O2JLt7tg==", "commit"=>"Shuffle lines", "poem_id"=>"17"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:82
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:85
+  [1m[36mPoem Update (0.3ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "its long blue pond. The stiffens wags\r\nthe nothingness, especially those with\r\nthe freshets that will come—six, a hollows—to sleep\r\nway of the dream and the endless\r\nleaves of earth? And don’t you think\r\nits many field. And in the fox\r\nhow comfortable it will be to touch\r\nthe trees birds dozen,\r\nthe piled shadows shifts a little\r\neverlasting and the white tuffets over which\r\nthe snow runs so quickly brings out\r\ngoldenrod of whispering? The goodbye\r\nDon’t you imagine the evening longing now\r\nthe bodies being crowned with the first\r\nmossy air, are beginning to look for\r\nwind to be on its tails.\r\nthe firewood instead of the\r\ninside their wind? And don’t you hear\r\n \r\n"], ["updated_at", "2019-04-15 17:37:09.073081"], ["id", 17]]
+  ↳ app/controllers/poems_controller.rb:85
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:85
+Redirected to http://localhost:3000/poems/17
+Completed 302 Found in 14ms (ActiveRecord: 6.8ms)
+
+
+Started GET "/poems/17" for ::1 at 2019-04-15 13:37:09 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.3ms)
+  Rendered poems/show.html.erb within layouts/application (27.4ms)
+Completed 200 OK in 60ms (Views: 56.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/poems/17/shuffle_lines" for ::1 at 2019-04-15 13:37:11 -0400
+Processing by PoemsController#shuffle_lines as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xROCzdHY3i6AwVJxtOs097C1XZWPmOeU5z9EKoc8pvLxXJbmp7v7fgnxtZBAKYABcBwpip5WOiMIgiZqEDy1NQ==", "commit"=>"Shuffle lines", "poem_id"=>"17"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:82
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:85
+  [1m[36mPoem Update (0.3ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "the piled shadows shifts a little\r\nits long blue pond. The stiffens wags\r\nway of the dream and the endless\r\nits many field. And in the fox\r\n \r\nmossy air, are beginning to look for\r\nDon’t you imagine the evening longing now\r\neverlasting and the white tuffets over which\r\ninside their wind? And don’t you hear\r\nthe firewood instead of the\r\nthe freshets that will come—six, a hollows—to sleep\r\nthe bodies being crowned with the first\r\ngoldenrod of whispering? The goodbye\r\nwind to be on its tails.\r\nthe snow runs so quickly brings out\r\nhow comfortable it will be to touch\r\nleaves of earth? And don’t you think\r\nthe nothingness, especially those with\r\nthe trees birds dozen,\r\n"], ["updated_at", "2019-04-15 17:37:11.144806"], ["id", 17]]
+  ↳ app/controllers/poems_controller.rb:85
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:85
+Redirected to http://localhost:3000/poems/17
+Completed 302 Found in 12ms (ActiveRecord: 6.7ms)
+
+
+Started GET "/poems/17" for ::1 at 2019-04-15 13:37:11 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.3ms)
+  Rendered poems/show.html.erb within layouts/application (18.8ms)
+Completed 200 OK in 42ms (Views: 39.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/poems/17/shuffle_lines" for ::1 at 2019-04-15 13:37:12 -0400
+Processing by PoemsController#shuffle_lines as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"b7v3AJyM9xFpEMg9wClGAC38LAGM1sw0tzWvuk5MGx1b9OMr6u/SQeAgL9w06/L27VVYHp0YEYNYiM362UwI2g==", "commit"=>"Shuffle lines", "poem_id"=>"17"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:82
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:85
+  [1m[36mPoem Update (0.3ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", " \r\nhow comfortable it will be to touch\r\nthe piled shadows shifts a little\r\nway of the dream and the endless\r\nwind to be on its tails.\r\nthe firewood instead of the\r\neverlasting and the white tuffets over which\r\ninside their wind? And don’t you hear\r\nmossy air, are beginning to look for\r\nthe bodies being crowned with the first\r\nits long blue pond. The stiffens wags\r\nits many field. And in the fox\r\nthe snow runs so quickly brings out\r\ngoldenrod of whispering? The goodbye\r\nthe nothingness, especially those with\r\nleaves of earth? And don’t you think\r\nthe trees birds dozen,\r\nDon’t you imagine the evening longing now\r\nthe freshets that will come—six, a hollows—to sleep\r\n"], ["updated_at", "2019-04-15 17:37:12.786344"], ["id", 17]]
+  ↳ app/controllers/poems_controller.rb:85
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:85
+Redirected to http://localhost:3000/poems/17
+Completed 302 Found in 13ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/poems/17" for ::1 at 2019-04-15 13:37:12 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.3ms)
+  Rendered poems/show.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 43ms (Views: 39.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/poems/17/shuffle_lines" for ::1 at 2019-04-15 13:37:13 -0400
+Processing by PoemsController#shuffle_lines as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Gpn0ucOeZ1hvUTvM3JaLAxajBesbFGU4lFPjyme7BNsu1uCStf1CCOZh3C0oVD/11gpx9ArauI977oGK8LsXHA==", "commit"=>"Shuffle lines", "poem_id"=>"17"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:82
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:85
+  [1m[36mPoem Update (0.3ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "goldenrod of whispering? The goodbye\r\nhow comfortable it will be to touch\r\nleaves of earth? And don’t you think\r\nthe snow runs so quickly brings out\r\nthe bodies being crowned with the first\r\n \r\nthe nothingness, especially those with\r\nmossy air, are beginning to look for\r\nthe firewood instead of the\r\nthe piled shadows shifts a little\r\nthe freshets that will come—six, a hollows—to sleep\r\nits many field. And in the fox\r\neverlasting and the white tuffets over which\r\ninside their wind? And don’t you hear\r\nits long blue pond. The stiffens wags\r\nDon’t you imagine the evening longing now\r\nthe trees birds dozen,\r\nwind to be on its tails.\r\nway of the dream and the endless\r\n"], ["updated_at", "2019-04-15 17:37:13.948492"], ["id", 17]]
+  ↳ app/controllers/poems_controller.rb:85
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:85
+Redirected to http://localhost:3000/poems/17
+Completed 302 Found in 13ms (ActiveRecord: 7.1ms)
+
+
+Started GET "/poems/17" for ::1 at 2019-04-15 13:37:13 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.3ms)
+  Rendered poems/show.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 42ms (Views: 39.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/poems/17/shuffle_lines" for ::1 at 2019-04-15 13:37:16 -0400
+Processing by PoemsController#shuffle_lines as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4W6E63srusL+LhDeFoPp9hKxKhpZbN9JqYyB3D6aLiLVIZDADUifknce9z/iQV0A0hheBUiiAv5GMeOcqZo95Q==", "commit"=>"Shuffle lines", "poem_id"=>"17"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:82
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:85
+  [1m[36mPoem Update (0.5ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "the piled shadows shifts a little\r\neverlasting and the white tuffets over which\r\nthe nothingness, especially those with\r\nits many field. And in the fox\r\nthe freshets that will come—six, a hollows—to sleep\r\nleaves of earth? And don’t you think\r\n \r\ngoldenrod of whispering? The goodbye\r\nDon’t you imagine the evening longing now\r\nmossy air, are beginning to look for\r\nhow comfortable it will be to touch\r\nthe trees birds dozen,\r\nwind to be on its tails.\r\nthe bodies being crowned with the first\r\nthe snow runs so quickly brings out\r\nway of the dream and the endless\r\nthe firewood instead of the\r\ninside their wind? And don’t you hear\r\nits long blue pond. The stiffens wags\r\n"], ["updated_at", "2019-04-15 17:37:16.040368"], ["id", 17]]
+  ↳ app/controllers/poems_controller.rb:85
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:85
+Redirected to http://localhost:3000/poems/17
+Completed 302 Found in 12ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/poems/17" for ::1 at 2019-04-15 13:37:16 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.3ms)
+  Rendered poems/show.html.erb within layouts/application (29.0ms)
+Completed 200 OK in 56ms (Views: 52.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/poems/17/shuffle_lines" for ::1 at 2019-04-15 13:37:17 -0400
+Processing by PoemsController#shuffle_lines as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5+WvypCpcCNVxjuMJZve++vg7pEA0nRRGLgMczie6UfTqrvh5spVc9z23G3RWWoNK0majhEcqeb3BW4zr576gA==", "commit"=>"Shuffle lines", "poem_id"=>"17"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:82
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:85
+  [1m[36mPoem Update (0.3ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "its many field. And in the fox\r\ngoldenrod of whispering? The goodbye\r\nthe trees birds dozen,\r\nDon’t you imagine the evening longing now\r\nthe freshets that will come—six, a hollows—to sleep\r\n \r\neverlasting and the white tuffets over which\r\nmossy air, are beginning to look for\r\nthe piled shadows shifts a little\r\ninside their wind? And don’t you hear\r\nits long blue pond. The stiffens wags\r\nthe bodies being crowned with the first\r\nleaves of earth? And don’t you think\r\nwind to be on its tails.\r\nhow comfortable it will be to touch\r\nthe nothingness, especially those with\r\nthe snow runs so quickly brings out\r\nway of the dream and the endless\r\nthe firewood instead of the\r\n"], ["updated_at", "2019-04-15 17:37:17.015290"], ["id", 17]]
+  ↳ app/controllers/poems_controller.rb:85
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:85
+Redirected to http://localhost:3000/poems/17
+Completed 302 Found in 14ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/poems/17" for ::1 at 2019-04-15 13:37:17 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.3ms)
+  Rendered poems/show.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 41ms (Views: 38.5ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/poems/17/shuffle_lines" for ::1 at 2019-04-15 13:37:17 -0400
+Processing by PoemsController#shuffle_lines as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ydRfV4JLT8NqpZ46rnyPtqN2/mjBJzt0YoxiC9RQf2j9m0t89Chqk+OVedtavjtAY9+Kd9Dp5sONMQBLQ1Bsrw==", "commit"=>"Shuffle lines", "poem_id"=>"17"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:82
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:85
+  [1m[36mPoem Update (0.4ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "the trees birds dozen,\r\neverlasting and the white tuffets over which\r\nmossy air, are beginning to look for\r\nits long blue pond. The stiffens wags\r\nthe snow runs so quickly brings out\r\nthe freshets that will come—six, a hollows—to sleep\r\nits many field. And in the fox\r\ninside their wind? And don’t you hear\r\n \r\nthe bodies being crowned with the first\r\nwind to be on its tails.\r\nthe piled shadows shifts a little\r\nthe nothingness, especially those with\r\nleaves of earth? And don’t you think\r\nway of the dream and the endless\r\nDon’t you imagine the evening longing now\r\nhow comfortable it will be to touch\r\ngoldenrod of whispering? The goodbye\r\nthe firewood instead of the\r\n"], ["updated_at", "2019-04-15 17:37:17.848624"], ["id", 17]]
+  ↳ app/controllers/poems_controller.rb:85
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:85
+Redirected to http://localhost:3000/poems/17
+Completed 302 Found in 7ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/poems/17" for ::1 at 2019-04-15 13:37:17 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.3ms)
+  Rendered poems/show.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 45ms (Views: 41.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/poems/17/shuffle_lines" for ::1 at 2019-04-15 13:37:18 -0400
+Processing by PoemsController#shuffle_lines as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9iB9h2KHmfhP+qX7IonP6qrxRyBKX4XEbuQ+B9M4DPfCb2msFOS8qMbKQhrWS3scalgzP1uRWHOBWVxHRDgfMA==", "commit"=>"Shuffle lines", "poem_id"=>"17"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:82
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:85
+  [1m[36mPoem Update (0.3ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "the piled shadows shifts a little\r\nway of the dream and the endless\r\nleaves of earth? And don’t you think\r\nthe firewood instead of the\r\neverlasting and the white tuffets over which\r\ngoldenrod of whispering? The goodbye\r\nthe snow runs so quickly brings out\r\nDon’t you imagine the evening longing now\r\nhow comfortable it will be to touch\r\nthe freshets that will come—six, a hollows—to sleep\r\nthe bodies being crowned with the first\r\nmossy air, are beginning to look for\r\nthe trees birds dozen,\r\n \r\ninside their wind? And don’t you hear\r\nits long blue pond. The stiffens wags\r\nthe nothingness, especially those with\r\nits many field. And in the fox\r\nwind to be on its tails.\r\n"], ["updated_at", "2019-04-15 17:37:18.647556"], ["id", 17]]
+  ↳ app/controllers/poems_controller.rb:85
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:85
+Redirected to http://localhost:3000/poems/17
+Completed 302 Found in 7ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/poems/17" for ::1 at 2019-04-15 13:37:18 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.3ms)
+  Rendered poems/show.html.erb within layouts/application (25.1ms)
+Completed 200 OK in 51ms (Views: 46.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/poems/17/shuffle_adjectives" for ::1 at 2019-04-15 13:37:29 -0400
+Processing by PoemsController#shuffle_adjectives as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zpv6MpHzhluCuV6SPx+HfCg3FKXepecval+Vi3D6kv361O4Z55CjCwuJuXPL3TOK6J5gus9rOpiF4vfL5/qBOg==", "commit"=>"Shuffle adjectives", "poem_id"=>"17"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:62
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:65
+  [1m[36mPoem Update (0.4ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "the endless shadows shifts a mossy\r\nway of the dream and the comfortable\r\nleaves of earth? And don’t you think\r\nthe firewood instead of the\r\neverlasting and the blue tuffets over which\r\ngoldenrod of whispering? The goodbye\r\nthe snow runs so quickly brings out\r\nDon’t you imagine the evening longing now\r\nhow little it will be to touch\r\nthe freshets that will come—six, a hollows—to sleep\r\nthe bodies being crowned with the piled\r\nmany air, are beginning to look for\r\nthe trees birds dozen,\r\n \r\ninside their wind? And don’t you hear\r\nits long white pond. The stiffens wags\r\nthe nothingness, especially those with\r\nits first field. And in the fox\r\nwind to be on its tails.\r\n"], ["updated_at", "2019-04-15 17:37:30.909794"], ["id", 17]]
+  ↳ app/controllers/poems_controller.rb:65
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:65
+Redirected to http://localhost:3000/poems/17
+Completed 302 Found in 1008ms (ActiveRecord: 6.8ms)
+
+
+Started GET "/poems/17" for ::1 at 2019-04-15 13:37:30 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.2ms)
+  Rendered poems/show.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 34ms (Views: 31.7ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/poems/17/shuffle_nouns" for ::1 at 2019-04-15 13:37:31 -0400
+Processing by PoemsController#shuffle_nouns as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2uoJ+CKGjVGKoDkVXXDz0u8bWeWuUkl9Gte6IyvIbTHupR3TVOWoAQOQ3vSpskckL7It+r+clMr1athjvMh+9g==", "commit"=>"Shuffle nouns", "poem_id"=>"17"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:42
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:45
+  [1m[36mPoem Update (0.3ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "the endless fox shifts a mossy\r\nbodies of the trees and the comfortable\r\nshadows of wind? And don’t you think\r\nthe goodbye instead of the\r\nstiffens and the blue evening over which\r\nway of wind? The tuffets\r\nthe birds runs so quickly brings out\r\nDon’t you imagine the pond longing now\r\nhow little it will be to touch\r\nthe air that will come—six, a hollows—to sleep\r\nthe tails being crowned with the piled\r\nmany field, are beginning to look for\r\nthe dream goldenrod earth,\r\n \r\ninside their dozen? And don’t you hear\r\nits long white snow. The whispering wags\r\nthe leaves, especially those with\r\nits first nothingness. And in the freshets\r\nfirewood to be on its everlasting.\r\n"], ["updated_at", "2019-04-15 17:37:32.187522"], ["id", 17]]
+  ↳ app/controllers/poems_controller.rb:45
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:45
+Redirected to http://localhost:3000/poems/17
+Completed 302 Found in 681ms (ActiveRecord: 6.6ms)
+
+
+Started GET "/poems/17" for ::1 at 2019-04-15 13:37:32 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.3ms)
+  Rendered poems/show.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 32ms (Views: 28.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/poems/new" for ::1 at 2019-04-15 13:38:41 -0400
+Processing by PoemsController#new as HTML
+  Rendering poems/new.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.2ms)
+  Rendered poems/new.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 55ms (Views: 52.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/poems" for ::1 at 2019-04-15 13:38:49 -0400
+Processing by PoemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MuaLSom+UQsB8i8qoD+THVUwoLDXhYqDF7f5E/rvIWJ1nys88o1Drbk/c5+KLLKh9EOWVhxkhYGzPx2nOX7kLg==", "poem"=>{"title"=>"Song for Autumn", "text"=>"Don’t you imagine the leaves dream now\r\nhow comfortable it will be to touch\r\nthe earth instead of the\r\nnothingness of the air and the endless\r\nfreshets of wind? And don’t you think\r\nthe trees, especially those with\r\nmossy hollows, are beginning to look for\r\n\r\nthe birds that will come—six, a dozen—to sleep\r\ninside their bodies? And don’t you hear\r\nthe goldenrod whispering goodbye,\r\nthe everlasting being crowned with the first\r\ntuffets of snow? The pond\r\nstiffens and the white field over which\r\nthe fox runs so quickly brings out\r\nits long blue shadows. The wind wags\r\nits many tails. And in the evening\r\nthe piled firewood shifts a little\r\nlonging to be on its way."}, "commit"=>"Continue"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:14
+  [1m[36mPoem Create (0.7ms)[0m  [1m[32mINSERT INTO "poems" ("title", "text", "created_at", "updated_at", "original") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Song for Autumn"], ["text", "Don’t you imagine the leaves dream now\r\nhow comfortable it will be to touch\r\nthe earth instead of the\r\nnothingness of the air and the endless\r\nfreshets of wind? And don’t you think\r\nthe trees, especially those with\r\nmossy hollows, are beginning to look for\r\n\r\nthe birds that will come—six, a dozen—to sleep\r\ninside their bodies? And don’t you hear\r\nthe goldenrod whispering goodbye,\r\nthe everlasting being crowned with the first\r\ntuffets of snow? The pond\r\nstiffens and the white field over which\r\nthe fox runs so quickly brings out\r\nits long blue shadows. The wind wags\r\nits many tails. And in the evening\r\nthe piled firewood shifts a little\r\nlonging to be on its way."], ["created_at", "2019-04-15 17:38:49.835611"], ["updated_at", "2019-04-15 17:38:49.835611"], ["original", "Don’t you imagine the leaves dream now\r\nhow comfortable it will be to touch\r\nthe earth instead of the\r\nnothingness of the air and the endless\r\nfreshets of wind? And don’t you think\r\nthe trees, especially those with\r\nmossy hollows, are beginning to look for\r\n\r\nthe birds that will come—six, a dozen—to sleep\r\ninside their bodies? And don’t you hear\r\nthe goldenrod whispering goodbye,\r\nthe everlasting being crowned with the first\r\ntuffets of snow? The pond\r\nstiffens and the white field over which\r\nthe fox runs so quickly brings out\r\nits long blue shadows. The wind wags\r\nits many tails. And in the evening\r\nthe piled firewood shifts a little\r\nlonging to be on its way."]]
+  ↳ app/controllers/poems_controller.rb:14
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:16
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:16
+Redirected to http://localhost:3000/poems/18
+Completed 302 Found in 11ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/poems/18" for ::1 at 2019-04-15 13:38:49 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.4ms)
+  Rendered poems/show.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 45ms (Views: 42.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/poems/18/cycle_nouns" for ::1 at 2019-04-15 13:39:11 -0400
+Processing by PoemsController#cycle_nouns as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"As4bcdgFdaX2UZa6cXKLc50EXwu5IXO6X5SkyyWQphI2gQ9armZQ9X9hcVuFsD+FXa0rFKjvrg2wKcaLspC11Q==", "commit"=>"Cycle nouns", "poem_id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:32
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:35
+  [1m[36mPoem Update (0.4ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "Don’t you imagine the way dream now\r\nhow comfortable it will be to touch\r\nthe leaves instead of the\r\nearth of the nothingness and the endless\r\nair of freshets? And don’t you think\r\nthe wind, especially those with\r\nmossy trees, are beginning to look for\r\n\r\nthe hollows that will come—six, a birds—to sleep\r\ninside their dozen? And don’t you hear\r\nthe bodies goldenrod whispering,\r\nthe goodbye being crowned with the first\r\neverlasting of tuffets? The snow\r\npond and the white stiffens over which\r\nthe field runs so quickly brings out\r\nits long blue fox. The shadows wags\r\nits many wind. And in the tails\r\nthe piled evening shifts a little\r\nfirewood to be on its longing."], ["updated_at", "2019-04-15 17:39:11.814993"], ["id", 18]]
+  ↳ app/controllers/poems_controller.rb:35
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:35
+Redirected to http://localhost:3000/poems/18
+Completed 302 Found in 584ms (ActiveRecord: 6.9ms)
+
+
+Started GET "/poems/18" for ::1 at 2019-04-15 13:39:11 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.4ms)
+  Rendered poems/show.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 32ms (Views: 29.7ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/poems/18/cycle_nouns" for ::1 at 2019-04-15 13:39:12 -0400
+Processing by PoemsController#cycle_nouns as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RzAUJoWDRPbpiZ9p3IK7lwDxOmQkiUsYcNRJ+QlR8shzfwAN8+BhpmC5eIgoQA9hwFhOezVHlq+faSu5nlHhDw==", "commit"=>"Cycle nouns", "poem_id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:32
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:35
+  [1m[36mPoem Update (0.3ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "Don’t you imagine the longing way now\r\nhow comfortable it will be to touch\r\nthe dream instead of the\r\nleaves of the earth and the endless\r\nnothingness of air? And don’t you think\r\nthe freshets, especially those with\r\nmossy wind, are beginning to look for\r\n\r\nthe trees that will come—six, a hollows—to sleep\r\ninside their birds? And don’t you hear\r\nthe dozen bodies goldenrod,\r\nthe whispering being crowned with the first\r\ngoodbye of everlasting? The tuffets\r\nsnow and the white pond over which\r\nthe stiffens runs so quickly brings out\r\nits long blue field. The fox wags\r\nits many shadows. And in the wind\r\nthe piled tails shifts a little\r\nevening to be on its firewood."], ["updated_at", "2019-04-15 17:39:12.908749"], ["id", 18]]
+  ↳ app/controllers/poems_controller.rb:35
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:35
+Redirected to http://localhost:3000/poems/18
+Completed 302 Found in 616ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/poems/18" for ::1 at 2019-04-15 13:39:12 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.3ms)
+  Rendered poems/show.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 40ms (Views: 37.5ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/poems/18/cycle_nouns" for ::1 at 2019-04-15 13:39:13 -0400
+Processing by PoemsController#cycle_nouns as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uGzI32O0zpE44k97ZXqHiFkyiZSNaBFjk3Y1zXDgDdeMI9z0FdfrwbHSqJqRuDN+mZv9i5ymzNR8y1eN5+AeEA==", "commit"=>"Cycle nouns", "poem_id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:32
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:35
+  [1m[36mPoem Update (0.3ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "Don’t you imagine the firewood longing now\r\nhow comfortable it will be to touch\r\nthe way instead of the\r\ndream of the leaves and the endless\r\nearth of nothingness? And don’t you think\r\nthe air, especially those with\r\nmossy freshets, are beginning to look for\r\n\r\nthe wind that will come—six, a hollows—to sleep\r\ninside their trees? And don’t you hear\r\nthe birds dozen bodies,\r\nthe goldenrod being crowned with the first\r\nwhispering of goodbye? The everlasting\r\ntuffets and the white snow over which\r\nthe pond runs so quickly brings out\r\nits long blue stiffens. The field wags\r\nits many fox. And in the shadows\r\nthe piled wind shifts a little\r\ntails to be on its evening."], ["updated_at", "2019-04-15 17:39:14.002430"], ["id", 18]]
+  ↳ app/controllers/poems_controller.rb:35
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:35
+Redirected to http://localhost:3000/poems/18
+Completed 302 Found in 613ms (ActiveRecord: 6.6ms)
+
+
+Started GET "/poems/18" for ::1 at 2019-04-15 13:39:14 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.3ms)
+  Rendered poems/show.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 39ms (Views: 35.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/poems/18/shuffle_nouns" for ::1 at 2019-04-15 13:39:14 -0400
+Processing by PoemsController#shuffle_nouns as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FQVQ4DUXHdJ94YmbZTRpCO6Y4rar4EuD6wl9e3n+S0EhSkTLQ3Q4gvTRbnqR9t3+LjGWqbouljQEtB877v5Yhg==", "commit"=>"Shuffle nouns", "poem_id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:42
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:45
+  [1m[36mPoem Update (0.5ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "Don’t you imagine the goldenrod longing now\r\nhow comfortable it will be to touch\r\nthe way instead of the\r\nair of the evening and the endless\r\nfirewood of tuffets? And don’t you think\r\nthe whispering, especially those with\r\nmossy dream, are beginning to look for\r\n\r\nthe fox that will come—six, a hollows—to sleep\r\ninside their nothingness? And don’t you hear\r\nthe bodies stiffens birds,\r\nthe earth being crowned with the first\r\nsnow of trees? The wind\r\nleaves and the white dozen over which\r\nthe everlasting runs so quickly brings out\r\nits long blue field. The wind wags\r\nits many goodbye. And in the pond\r\nthe piled shadows shifts a little\r\ntails to be on its freshets."], ["updated_at", "2019-04-15 17:39:15.030552"], ["id", 18]]
+  ↳ app/controllers/poems_controller.rb:45
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:45
+Redirected to http://localhost:3000/poems/18
+Completed 302 Found in 583ms (ActiveRecord: 6.8ms)
+
+
+Started GET "/poems/18" for ::1 at 2019-04-15 13:39:15 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.4ms)
+  Rendered poems/show.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 35ms (Views: 32.4ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/poems/18/cycle_lines" for ::1 at 2019-04-15 13:39:15 -0400
+Processing by PoemsController#cycle_lines as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"62NAUpk/gSVfyoGjpIIKQ1ka7tere49GFDTfy3ylA9XfLFR571ykddb6ZkJQQL61mbOayLq1UvH7ib2L66UQEg==", "commit"=>"Cycle lines", "poem_id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:72
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:75
+  [1m[36mPoem Update (0.3ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "tails to be on its freshets.\r\nDon’t you imagine the goldenrod longing now\r\nhow comfortable it will be to touch\r\nthe way instead of the\r\nair of the evening and the endless\r\nfirewood of tuffets? And don’t you think\r\nthe whispering, especially those with\r\nmossy dream, are beginning to look for\r\n \r\nthe fox that will come—six, a hollows—to sleep\r\ninside their nothingness? And don’t you hear\r\nthe bodies stiffens birds,\r\nthe earth being crowned with the first\r\nsnow of trees? The wind\r\nleaves and the white dozen over which\r\nthe everlasting runs so quickly brings out\r\nits long blue field. The wind wags\r\nits many goodbye. And in the pond\r\nthe piled shadows shifts a little\r\n"], ["updated_at", "2019-04-15 17:39:15.650076"], ["id", 18]]
+  ↳ app/controllers/poems_controller.rb:75
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:75
+Redirected to http://localhost:3000/poems/18
+Completed 302 Found in 7ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/poems/18" for ::1 at 2019-04-15 13:39:15 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.3ms)
+  Rendered poems/show.html.erb within layouts/application (25.5ms)
+Completed 200 OK in 50ms (Views: 45.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/poems/18/cycle_lines" for ::1 at 2019-04-15 13:39:16 -0400
+Processing by PoemsController#cycle_lines as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e27mgk2BA6vQq9c2YLXVDbVpVwm6e4wsqciNarv/V4BPIfKpO+Im+1mbMNeUd2H7dcAjFqu1UZtGde8qLP9ERw==", "commit"=>"Cycle lines", "poem_id"=>"18"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:72
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:75
+  [1m[36mPoem Update (0.3ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "the piled shadows shifts a little\r\ntails to be on its freshets.\r\nDon’t you imagine the goldenrod longing now\r\nhow comfortable it will be to touch\r\nthe way instead of the\r\nair of the evening and the endless\r\nfirewood of tuffets? And don’t you think\r\nthe whispering, especially those with\r\nmossy dream, are beginning to look for\r\n \r\nthe fox that will come—six, a hollows—to sleep\r\ninside their nothingness? And don’t you hear\r\nthe bodies stiffens birds,\r\nthe earth being crowned with the first\r\nsnow of trees? The wind\r\nleaves and the white dozen over which\r\nthe everlasting runs so quickly brings out\r\nits long blue field. The wind wags\r\nits many goodbye. And in the pond\r\n"], ["updated_at", "2019-04-15 17:39:16.826853"], ["id", 18]]
+  ↳ app/controllers/poems_controller.rb:75
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:75
+Redirected to http://localhost:3000/poems/18
+Completed 302 Found in 4ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/poems/18" for ::1 at 2019-04-15 13:39:16 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.2ms)
+  Rendered poems/show.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 41ms (Views: 37.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/poems/18/shuffle_adjectives" for ::1 at 2019-04-15 13:39:17 -0400
+Processing by PoemsController#shuffle_adjectives as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9z6i7wMJEZ36Z2gWwdDpgAHJVmCJa6NSfftU6R5KfpTDcbbEdWo0zXNXj/c1El12wWAif5ilfuWSRjapiUptUw==", "commit"=>"Shuffle adjectives", "poem_id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:62
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:65
+  [1m[36mPoem Update (0.3ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "the many shadows shifts a white\r\ntails to be on its freshets.\r\nDon’t you imagine the goldenrod longing now\r\nhow blue it will be to touch\r\nthe way instead of the\r\nair of the evening and the little\r\nfirewood of tuffets? And don’t you think\r\nthe whispering, especially those with\r\nlong dream, are beginning to look for\r\n \r\nthe fox that will come—six, a hollows—to sleep\r\ninside their nothingness? And don’t you hear\r\nthe bodies stiffens birds,\r\nthe earth being crowned with the mossy\r\nsnow of trees? The wind\r\nleaves and the comfortable dozen over which\r\nthe everlasting runs so quickly brings out\r\nits piled first field. The wind wags\r\nits endless goodbye. And in the pond\r\n"], ["updated_at", "2019-04-15 17:39:18.453316"], ["id", 18]]
+  ↳ app/controllers/poems_controller.rb:65
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:65
+Redirected to http://localhost:3000/poems/18
+Completed 302 Found in 598ms (ActiveRecord: 6.6ms)
+
+
+Started GET "/poems/18" for ::1 at 2019-04-15 13:39:18 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.3ms)
+  Rendered poems/show.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 37ms (Views: 33.0ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/poems/18/shuffle_lines" for ::1 at 2019-04-15 13:39:18 -0400
+Processing by PoemsController#shuffle_lines as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ziBtG+zJtoTdj3mg5DeCLuN90NPPXVC3qIW0CsFmRsr6b3kwmqqT1FS/nkEQ9TbYI9SkzN6TjQBHONZKVmZVDQ==", "commit"=>"Shuffle lines", "poem_id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:82
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:85
+  [1m[36mPoem Update (0.3ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "air of the evening and the little\r\nthe bodies stiffens birds,\r\nDon’t you imagine the goldenrod longing now\r\nsnow of trees? The wind\r\nthe everlasting runs so quickly brings out\r\nlong dream, are beginning to look for\r\nhow blue it will be to touch\r\nits endless goodbye. And in the pond\r\nleaves and the comfortable dozen over which\r\n \r\nthe whispering, especially those with\r\nthe many shadows shifts a white\r\nthe earth being crowned with the mossy\r\nthe fox that will come—six, a hollows—to sleep\r\ntails to be on its freshets.\r\ninside their nothingness? And don’t you hear\r\nfirewood of tuffets? And don’t you think\r\nits piled first field. The wind wags\r\nthe way instead of the\r\n"], ["updated_at", "2019-04-15 17:39:18.993245"], ["id", 18]]
+  ↳ app/controllers/poems_controller.rb:85
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:85
+Redirected to http://localhost:3000/poems/18
+Completed 302 Found in 7ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/poems/18" for ::1 at 2019-04-15 13:39:19 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.4ms)
+  Rendered poems/show.html.erb within layouts/application (26.1ms)
+Completed 200 OK in 51ms (Views: 45.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/poems/18/cycle_adjectives" for ::1 at 2019-04-15 13:39:20 -0400
+Processing by PoemsController#cycle_adjectives as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Mn0IQrSVy0so4UtUlZy49WX168ZB/htk7vkzfHnvcloGMhxpwvbuG6HRrLVhXgwDpVyf2VAwxtMBRFE87u9hnQ==", "commit"=>"Cycle adjectives", "poem_id"=>"18"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:52
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:55
+  [1m[36mPoem Update (0.3ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "air of the evening and the white\r\nthe bodies stiffens birds,\r\nDon’t you imagine the goldenrod longing now\r\nsnow of trees? The wind\r\nthe everlasting runs so quickly brings out\r\nlittle dream, are beginning to look for\r\nhow long it will be to touch\r\nits blue goodbye. And in the pond\r\nleaves and the endless dozen over which\r\n \r\nthe whispering, especially those with\r\nthe comfortable shadows shifts a many\r\nthe earth being crowned with the mossy\r\nthe fox that will come—six, a hollows—to sleep\r\ntails to be on its freshets.\r\ninside their nothingness? And don’t you hear\r\nfirewood of tuffets? And don’t you think\r\nits piled first field. The wind wags\r\nthe way instead of the\r\n"], ["updated_at", "2019-04-15 17:39:20.572709"], ["id", 18]]
+  ↳ app/controllers/poems_controller.rb:55
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:55
+Redirected to http://localhost:3000/poems/18
+Completed 302 Found in 567ms (ActiveRecord: 6.5ms)
+
+
+Started GET "/poems/18" for ::1 at 2019-04-15 13:39:20 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.3ms)
+  Rendered poems/show.html.erb within layouts/application (15.9ms)
+Completed 200 OK in 37ms (Views: 32.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/poems" for ::1 at 2019-04-15 13:39:26 -0400
+Processing by PoemsController#index as HTML
+  Rendering poems/index.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.2ms)
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT "poems".* FROM "poems"[0m
+  ↳ app/views/poems/index.html.erb:16
+  Rendered poems/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 41ms (Views: 37.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/poems" for ::1 at 2019-04-15 13:39:30 -0400
+Processing by PoemsController#index as HTML
+  Rendering poems/index.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.2ms)
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT "poems".* FROM "poems"[0m
+  ↳ app/views/poems/index.html.erb:16
+  Rendered poems/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 48ms (Views: 44.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/poems" for ::1 at 2019-04-15 13:39:44 -0400
+Processing by PoemsController#index as HTML
+  Rendering poems/index.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.4ms)
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT "poems".* FROM "poems"[0m
+  ↳ app/views/poems/index.html.erb:16
+  Rendered poems/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 47ms (Views: 43.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/poems/18" for ::1 at 2019-04-15 13:39:47 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.3ms)
+  Rendered poems/show.html.erb within layouts/application (22.7ms)
+Completed 200 OK in 48ms (Views: 45.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/poems/18" for ::1 at 2019-04-15 13:40:19 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.3ms)
+  Rendered poems/show.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 43ms (Views: 40.4ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/poems/18/cycle_nouns" for ::1 at 2019-04-15 13:40:31 -0400
+Processing by PoemsController#cycle_nouns as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pLLHCCMNBbx6sChhH7+RMBfldGzYPwywdJe+/mdO2xKQ/dMjVW4g7POAz4DrfSXG10wAc8nx0QebKty+8E7I1Q==", "commit"=>"Cycle nouns", "poem_id"=>"18"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:32
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:35
+  [1m[36mPoem Update (0.4ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "way of the air and the white\r\nthe evening stiffens bodies,\r\nDon’t you imagine the birds longing now\r\ngoldenrod of snow? The trees\r\nthe wind runs so quickly brings out\r\nlittle everlasting, are beginning to look for\r\nhow long it will be to touch\r\nits blue dream. And in the goodbye\r\npond and the endless leaves over which\r\n \r\nthe dozen, especially those with\r\nthe comfortable whispering shifts a many\r\nthe shadows being crowned with the earth\r\nthe mossy that will come—six, a hollows—to sleep\r\nfox to be on its tails.\r\ninside their freshets? And don’t you hear\r\nnothingness of firewood? And don’t you think\r\nits piled first tuffets. The field wags\r\nthe wind instead of the\r\n"], ["updated_at", "2019-04-15 17:40:32.249143"], ["id", 18]]
+  ↳ app/controllers/poems_controller.rb:35
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:35
+Redirected to http://localhost:3000/poems/18
+Completed 302 Found in 601ms (ActiveRecord: 6.6ms)
+
+
+Started GET "/poems/18" for ::1 at 2019-04-15 13:40:32 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.3ms)
+  Rendered poems/show.html.erb within layouts/application (20.4ms)
+Completed 200 OK in 39ms (Views: 36.8ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/poems/18/shuffle_nouns" for ::1 at 2019-04-15 13:40:33 -0400
+Processing by PoemsController#shuffle_nouns as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46phDdOBsSa/MgpAe11pCUQq2gzqr0YIKF/mPhf/t9PX5XUmpeKUdjYC7aGPn93/hIOuE/thm7/H4oR+gP+kFA==", "commit"=>"Shuffle nouns", "poem_id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:42
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:45
+  [1m[36mPoem Update (0.3ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "goodbye of the firewood and the white\r\nthe birds stiffens dozen,\r\nDon’t you imagine the mossy longing now\r\npond of freshets? The everlasting\r\nthe trees runs so quickly brings out\r\nlittle snow, are beginning to look for\r\nhow long it will be to touch\r\nits blue whispering. And in the nothingness\r\ngoldenrod and the endless wind over which\r\n \r\nthe air, especially those with\r\nthe comfortable tails shifts a many\r\nthe leaves being crowned with the shadows\r\nthe field that will come—six, a hollows—to sleep\r\nwind to be on its evening.\r\ninside their way? And don’t you hear\r\nearth of dream? And don’t you think\r\nits piled first tuffets. The fox wags\r\nthe bodies instead of the\r\n"], ["updated_at", "2019-04-15 17:40:34.778211"], ["id", 18]]
+  ↳ app/controllers/poems_controller.rb:45
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:45
+Redirected to http://localhost:3000/poems/18
+Completed 302 Found in 1055ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/poems/18" for ::1 at 2019-04-15 13:40:34 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.3ms)
+  Rendered poems/show.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 34ms (Views: 31.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/poems/18/cycle_lines" for ::1 at 2019-04-15 13:40:36 -0400
+Processing by PoemsController#cycle_lines as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OgPQJ1Ik27S9USCfumHVS92T5KHmFVXH6Vkx2idwqeMOTMQMJEf+5DRhx35Oo2G9HTqQvvfbiHAG5FOasHC6JA==", "commit"=>"Cycle lines", "poem_id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:72
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:75
+  [1m[36mPoem Update (0.4ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "the bodies instead of the\r\ngoodbye of the firewood and the white\r\nthe birds stiffens dozen,\r\nDon’t you imagine the mossy longing now\r\npond of freshets? The everlasting\r\nthe trees runs so quickly brings out\r\nlittle snow, are beginning to look for\r\nhow long it will be to touch\r\nits blue whispering. And in the nothingness\r\ngoldenrod and the endless wind over which\r\n \r\nthe air, especially those with\r\nthe comfortable tails shifts a many\r\nthe leaves being crowned with the shadows\r\nthe field that will come—six, a hollows—to sleep\r\nwind to be on its evening.\r\ninside their way? And don’t you hear\r\nearth of dream? And don’t you think\r\nits piled first tuffets. The fox wags\r\n"], ["updated_at", "2019-04-15 17:40:36.168472"], ["id", 18]]
+  ↳ app/controllers/poems_controller.rb:75
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:75
+Redirected to http://localhost:3000/poems/18
+Completed 302 Found in 8ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/poems/18" for ::1 at 2019-04-15 13:40:36 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.5ms)
+  Rendered poems/show.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 42ms (Views: 38.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/poems/18/cycle_lines" for ::1 at 2019-04-15 13:40:36 -0400
+Processing by PoemsController#cycle_lines as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KuQg+2/pXf8jau3npLpfKrJdC16ERFNbogtXLvbPvu8eqzTQGYp4r6paCgZQeOvccvR/QZWKjuxNtjVuYc+tKA==", "commit"=>"Cycle lines", "poem_id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:72
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:75
+  [1m[36mPoem Update (0.4ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "its piled first tuffets. The fox wags\r\nthe bodies instead of the\r\ngoodbye of the firewood and the white\r\nthe birds stiffens dozen,\r\nDon’t you imagine the mossy longing now\r\npond of freshets? The everlasting\r\nthe trees runs so quickly brings out\r\nlittle snow, are beginning to look for\r\nhow long it will be to touch\r\nits blue whispering. And in the nothingness\r\ngoldenrod and the endless wind over which\r\n \r\nthe air, especially those with\r\nthe comfortable tails shifts a many\r\nthe leaves being crowned with the shadows\r\nthe field that will come—six, a hollows—to sleep\r\nwind to be on its evening.\r\ninside their way? And don’t you hear\r\nearth of dream? And don’t you think\r\n"], ["updated_at", "2019-04-15 17:40:36.820898"], ["id", 18]]
+  ↳ app/controllers/poems_controller.rb:75
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:75
+Redirected to http://localhost:3000/poems/18
+Completed 302 Found in 9ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/poems/18" for ::1 at 2019-04-15 13:40:36 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.3ms)
+  Rendered poems/show.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 50ms (Views: 44.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/poems/18/cycle_lines" for ::1 at 2019-04-15 13:40:37 -0400
+Processing by PoemsController#cycle_lines as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ympVQozPOXQkwrj+gUwSdgOUANOOE5gfzBUGqfs7Rg7+JUFp+qwcJK3yXx91jqaAwz10zJ/dRagjqGTpbDtVyQ==", "commit"=>"Cycle lines", "poem_id"=>"18"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:72
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:75
+  [1m[36mPoem Update (0.4ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "earth of dream? And don’t you think\r\nits piled first tuffets. The fox wags\r\nthe bodies instead of the\r\ngoodbye of the firewood and the white\r\nthe birds stiffens dozen,\r\nDon’t you imagine the mossy longing now\r\npond of freshets? The everlasting\r\nthe trees runs so quickly brings out\r\nlittle snow, are beginning to look for\r\nhow long it will be to touch\r\nits blue whispering. And in the nothingness\r\ngoldenrod and the endless wind over which\r\n \r\nthe air, especially those with\r\nthe comfortable tails shifts a many\r\nthe leaves being crowned with the shadows\r\nthe field that will come—six, a hollows—to sleep\r\nwind to be on its evening.\r\ninside their way? And don’t you hear\r\n"], ["updated_at", "2019-04-15 17:40:37.450191"], ["id", 18]]
+  ↳ app/controllers/poems_controller.rb:75
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:75
+Redirected to http://localhost:3000/poems/18
+Completed 302 Found in 13ms (ActiveRecord: 7.5ms)
+
+
+Started GET "/poems/18" for ::1 at 2019-04-15 13:40:37 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.3ms)
+  Rendered poems/show.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 41ms (Views: 38.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/poems/18/cycle_lines" for ::1 at 2019-04-15 13:40:37 -0400
+Processing by PoemsController#cycle_lines as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0FGniBwRvib4I6u1pNehIpfr6jtoOXm3CVSo52+oZpbkHrOjanKbdnETTFRQFRXUV0KeJHn3pADm6cqn+Kh1UQ==", "commit"=>"Cycle lines", "poem_id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:72
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:75
+  [1m[36mPoem Update (0.5ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "inside their way? And don’t you hear\r\nearth of dream? And don’t you think\r\nits piled first tuffets. The fox wags\r\nthe bodies instead of the\r\ngoodbye of the firewood and the white\r\nthe birds stiffens dozen,\r\nDon’t you imagine the mossy longing now\r\npond of freshets? The everlasting\r\nthe trees runs so quickly brings out\r\nlittle snow, are beginning to look for\r\nhow long it will be to touch\r\nits blue whispering. And in the nothingness\r\ngoldenrod and the endless wind over which\r\n \r\nthe air, especially those with\r\nthe comfortable tails shifts a many\r\nthe leaves being crowned with the shadows\r\nthe field that will come—six, a hollows—to sleep\r\nwind to be on its evening.\r\n"], ["updated_at", "2019-04-15 17:40:37.989080"], ["id", 18]]
+  ↳ app/controllers/poems_controller.rb:75
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:75
+Redirected to http://localhost:3000/poems/18
+Completed 302 Found in 8ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/poems/18" for ::1 at 2019-04-15 13:40:37 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.4ms)
+  Rendered poems/show.html.erb within layouts/application (19.4ms)
+Completed 200 OK in 46ms (Views: 40.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/poems/18/cycle_lines" for ::1 at 2019-04-15 13:40:38 -0400
+Processing by PoemsController#cycle_lines as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JFwLYF8wQgILz9BSxXaSNm57QErsHZxgvX7lxSd53twQEx9LKVNnUoL/N7MxtCbArtI0Vf3TQddSw4eFsHnNGw==", "commit"=>"Cycle lines", "poem_id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:72
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:75
+  [1m[36mPoem Update (0.4ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "wind to be on its evening.\r\ninside their way? And don’t you hear\r\nearth of dream? And don’t you think\r\nits piled first tuffets. The fox wags\r\nthe bodies instead of the\r\ngoodbye of the firewood and the white\r\nthe birds stiffens dozen,\r\nDon’t you imagine the mossy longing now\r\npond of freshets? The everlasting\r\nthe trees runs so quickly brings out\r\nlittle snow, are beginning to look for\r\nhow long it will be to touch\r\nits blue whispering. And in the nothingness\r\ngoldenrod and the endless wind over which\r\n \r\nthe air, especially those with\r\nthe comfortable tails shifts a many\r\nthe leaves being crowned with the shadows\r\nthe field that will come—six, a hollows—to sleep\r\n"], ["updated_at", "2019-04-15 17:40:38.519153"], ["id", 18]]
+  ↳ app/controllers/poems_controller.rb:75
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:75
+Redirected to http://localhost:3000/poems/18
+Completed 302 Found in 12ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/poems/18" for ::1 at 2019-04-15 13:40:38 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.3ms)
+  Rendered poems/show.html.erb within layouts/application (18.8ms)
+Completed 200 OK in 41ms (Views: 38.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/poems/18/cycle_lines" for ::1 at 2019-04-15 13:40:39 -0400
+Processing by PoemsController#cycle_lines as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"c/F1eT9q63EILQazguCS9agaCEeHEMdDKlvn+Ln8gnFHvmFSSQnOIYEd4VJ2IiYDaLN8WJbeGvTF5oW4LvyRtg==", "commit"=>"Cycle lines", "poem_id"=>"18"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:72
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:75
+  [1m[36mPoem Update (0.4ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "the field that will come—six, a hollows—to sleep\r\nwind to be on its evening.\r\ninside their way? And don’t you hear\r\nearth of dream? And don’t you think\r\nits piled first tuffets. The fox wags\r\nthe bodies instead of the\r\ngoodbye of the firewood and the white\r\nthe birds stiffens dozen,\r\nDon’t you imagine the mossy longing now\r\npond of freshets? The everlasting\r\nthe trees runs so quickly brings out\r\nlittle snow, are beginning to look for\r\nhow long it will be to touch\r\nits blue whispering. And in the nothingness\r\ngoldenrod and the endless wind over which\r\n \r\nthe air, especially those with\r\nthe comfortable tails shifts a many\r\nthe leaves being crowned with the shadows\r\n"], ["updated_at", "2019-04-15 17:40:39.126699"], ["id", 18]]
+  ↳ app/controllers/poems_controller.rb:75
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:75
+Redirected to http://localhost:3000/poems/18
+Completed 302 Found in 8ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/poems/18" for ::1 at 2019-04-15 13:40:39 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.3ms)
+  Rendered poems/show.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 43ms (Views: 39.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/poems/18/cycle_lines" for ::1 at 2019-04-15 13:40:39 -0400
+Processing by PoemsController#cycle_lines as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F5Eqfr+FwA9IjIwN/CcPPpaWmgajVdNg/Fpl4zoYqasj3j5VyeblX8G8a+wI5bvIVj/uGbKbDtcT5wejrRi6bA==", "commit"=>"Cycle lines", "poem_id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:72
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:75
+  [1m[36mPoem Update (0.3ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "the leaves being crowned with the shadows\r\nthe field that will come—six, a hollows—to sleep\r\nwind to be on its evening.\r\ninside their way? And don’t you hear\r\nearth of dream? And don’t you think\r\nits piled first tuffets. The fox wags\r\nthe bodies instead of the\r\ngoodbye of the firewood and the white\r\nthe birds stiffens dozen,\r\nDon’t you imagine the mossy longing now\r\npond of freshets? The everlasting\r\nthe trees runs so quickly brings out\r\nlittle snow, are beginning to look for\r\nhow long it will be to touch\r\nits blue whispering. And in the nothingness\r\ngoldenrod and the endless wind over which\r\n \r\nthe air, especially those with\r\nthe comfortable tails shifts a many\r\n"], ["updated_at", "2019-04-15 17:40:39.665478"], ["id", 18]]
+  ↳ app/controllers/poems_controller.rb:75
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:75
+Redirected to http://localhost:3000/poems/18
+Completed 302 Found in 7ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/poems/18" for ::1 at 2019-04-15 13:40:39 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.3ms)
+  Rendered poems/show.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 41ms (Views: 37.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/poems/18/cycle_lines" for ::1 at 2019-04-15 13:40:40 -0400
+Processing by PoemsController#cycle_lines as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4D5O8gdd5r+Fn9r1ueiG5cYbt5TuwHmesjvYzLH2CULUcVrZcT7D7wyvPRRNKjITBrLDi/8OpCldhrqMJvYahQ==", "commit"=>"Cycle lines", "poem_id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:72
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:75
+  [1m[36mPoem Update (0.4ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "the comfortable tails shifts a many\r\nthe leaves being crowned with the shadows\r\nthe field that will come—six, a hollows—to sleep\r\nwind to be on its evening.\r\ninside their way? And don’t you hear\r\nearth of dream? And don’t you think\r\nits piled first tuffets. The fox wags\r\nthe bodies instead of the\r\ngoodbye of the firewood and the white\r\nthe birds stiffens dozen,\r\nDon’t you imagine the mossy longing now\r\npond of freshets? The everlasting\r\nthe trees runs so quickly brings out\r\nlittle snow, are beginning to look for\r\nhow long it will be to touch\r\nits blue whispering. And in the nothingness\r\ngoldenrod and the endless wind over which\r\n \r\nthe air, especially those with\r\n"], ["updated_at", "2019-04-15 17:40:40.238025"], ["id", 18]]
+  ↳ app/controllers/poems_controller.rb:75
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:75
+Redirected to http://localhost:3000/poems/18
+Completed 302 Found in 13ms (ActiveRecord: 6.9ms)
+
+
+Started GET "/poems/18" for ::1 at 2019-04-15 13:40:40 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.3ms)
+  Rendered poems/show.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 37ms (Views: 34.0ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/poems/18/cycle_lines" for ::1 at 2019-04-15 13:40:40 -0400
+Processing by PoemsController#cycle_lines as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HN/OXfHaEWjMVb08A/zrFgG6Qv/+QJbbwrHFGp4QrMgokNp2h7k0OEVlWt33Pl/gwRM24O+OS2wtDKdaCRC/Dw==", "commit"=>"Cycle lines", "poem_id"=>"18"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:72
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:75
+  [1m[36mPoem Update (0.3ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "the air, especially those with\r\nthe comfortable tails shifts a many\r\nthe leaves being crowned with the shadows\r\nthe field that will come—six, a hollows—to sleep\r\nwind to be on its evening.\r\ninside their way? And don’t you hear\r\nearth of dream? And don’t you think\r\nits piled first tuffets. The fox wags\r\nthe bodies instead of the\r\ngoodbye of the firewood and the white\r\nthe birds stiffens dozen,\r\nDon’t you imagine the mossy longing now\r\npond of freshets? The everlasting\r\nthe trees runs so quickly brings out\r\nlittle snow, are beginning to look for\r\nhow long it will be to touch\r\nits blue whispering. And in the nothingness\r\ngoldenrod and the endless wind over which\r\n \r\n"], ["updated_at", "2019-04-15 17:40:40.700004"], ["id", 18]]
+  ↳ app/controllers/poems_controller.rb:75
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:75
+Redirected to http://localhost:3000/poems/18
+Completed 302 Found in 7ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/poems/18" for ::1 at 2019-04-15 13:40:40 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.4ms)
+  Rendered poems/show.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 45ms (Views: 41.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/poems/18/cycle_lines" for ::1 at 2019-04-15 13:40:41 -0400
+Processing by PoemsController#cycle_lines as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i8FunpfXtfJ8/9D8xorSpOC1++IuhmwC5NZQdRbL3X6/jnq14bSQovXPNx0ySGZSIByP/T9IsbULazI1gcvOuQ==", "commit"=>"Cycle lines", "poem_id"=>"18"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:72
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:75
+  [1m[36mPoem Update (0.4ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", " \r\nthe air, especially those with\r\nthe comfortable tails shifts a many\r\nthe leaves being crowned with the shadows\r\nthe field that will come—six, a hollows—to sleep\r\nwind to be on its evening.\r\ninside their way? And don’t you hear\r\nearth of dream? And don’t you think\r\nits piled first tuffets. The fox wags\r\nthe bodies instead of the\r\ngoodbye of the firewood and the white\r\nthe birds stiffens dozen,\r\nDon’t you imagine the mossy longing now\r\npond of freshets? The everlasting\r\nthe trees runs so quickly brings out\r\nlittle snow, are beginning to look for\r\nhow long it will be to touch\r\nits blue whispering. And in the nothingness\r\ngoldenrod and the endless wind over which\r\n"], ["updated_at", "2019-04-15 17:40:41.952077"], ["id", 18]]
+  ↳ app/controllers/poems_controller.rb:75
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:75
+Redirected to http://localhost:3000/poems/18
+Completed 302 Found in 8ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/poems/18" for ::1 at 2019-04-15 13:40:41 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.3ms)
+  Rendered poems/show.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 50ms (Views: 47.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/poems/18/cycle_lines" for ::1 at 2019-04-15 13:40:42 -0400
+Processing by PoemsController#cycle_lines as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SQ9snV3KKzZEzGIi5umYD9f06oy4yTKSTYhu5jVJ3CN9QHi2K6kOZs38hcMSKyz5F12ek6kH7yWiNQymoknP5A==", "commit"=>"Cycle lines", "poem_id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:72
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:75
+  [1m[36mPoem Update (0.6ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "goldenrod and the endless wind over which\r\n \r\nthe air, especially those with\r\nthe comfortable tails shifts a many\r\nthe leaves being crowned with the shadows\r\nthe field that will come—six, a hollows—to sleep\r\nwind to be on its evening.\r\ninside their way? And don’t you hear\r\nearth of dream? And don’t you think\r\nits piled first tuffets. The fox wags\r\nthe bodies instead of the\r\ngoodbye of the firewood and the white\r\nthe birds stiffens dozen,\r\nDon’t you imagine the mossy longing now\r\npond of freshets? The everlasting\r\nthe trees runs so quickly brings out\r\nlittle snow, are beginning to look for\r\nhow long it will be to touch\r\nits blue whispering. And in the nothingness\r\n"], ["updated_at", "2019-04-15 17:40:42.555911"], ["id", 18]]
+  ↳ app/controllers/poems_controller.rb:75
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:75
+Redirected to http://localhost:3000/poems/18
+Completed 302 Found in 9ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/poems/18" for ::1 at 2019-04-15 13:40:42 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.3ms)
+  Rendered poems/show.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 41ms (Views: 37.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/poems/18/cycle_lines" for ::1 at 2019-04-15 13:40:43 -0400
+Processing by PoemsController#cycle_lines as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"A+CEUq4V8Jt0QnyWAPspwMHTwfJL5bQ8zGnvpgJvoB03r5B52HbVy/1ym3f0OZ02AXq17VoraYsj1I3mlW+z2g==", "commit"=>"Cycle lines", "poem_id"=>"18"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:72
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:75
+  [1m[36mPoem Update (0.3ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "its blue whispering. And in the nothingness\r\ngoldenrod and the endless wind over which\r\n \r\nthe air, especially those with\r\nthe comfortable tails shifts a many\r\nthe leaves being crowned with the shadows\r\nthe field that will come—six, a hollows—to sleep\r\nwind to be on its evening.\r\ninside their way? And don’t you hear\r\nearth of dream? And don’t you think\r\nits piled first tuffets. The fox wags\r\nthe bodies instead of the\r\ngoodbye of the firewood and the white\r\nthe birds stiffens dozen,\r\nDon’t you imagine the mossy longing now\r\npond of freshets? The everlasting\r\nthe trees runs so quickly brings out\r\nlittle snow, are beginning to look for\r\nhow long it will be to touch\r\n"], ["updated_at", "2019-04-15 17:40:43.199471"], ["id", 18]]
+  ↳ app/controllers/poems_controller.rb:75
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:75
+Redirected to http://localhost:3000/poems/18
+Completed 302 Found in 7ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/poems/18" for ::1 at 2019-04-15 13:40:43 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.3ms)
+  Rendered poems/show.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 41ms (Views: 38.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/poems/18/cycle_lines" for ::1 at 2019-04-15 13:40:43 -0400
+Processing by PoemsController#cycle_lines as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Wg/Ylr/11MX3faKArbMxw4rK61nBFj03jJcBkRwVfjFuQMy9yZbxlX5NRWFZcYU1SmOfRtDY4IBjKmPRixVt9g==", "commit"=>"Cycle lines", "poem_id"=>"18"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:72
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:75
+  [1m[36mPoem Update (0.4ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "how long it will be to touch\r\nits blue whispering. And in the nothingness\r\ngoldenrod and the endless wind over which\r\n \r\nthe air, especially those with\r\nthe comfortable tails shifts a many\r\nthe leaves being crowned with the shadows\r\nthe field that will come—six, a hollows—to sleep\r\nwind to be on its evening.\r\ninside their way? And don’t you hear\r\nearth of dream? And don’t you think\r\nits piled first tuffets. The fox wags\r\nthe bodies instead of the\r\ngoodbye of the firewood and the white\r\nthe birds stiffens dozen,\r\nDon’t you imagine the mossy longing now\r\npond of freshets? The everlasting\r\nthe trees runs so quickly brings out\r\nlittle snow, are beginning to look for\r\n"], ["updated_at", "2019-04-15 17:40:43.750821"], ["id", 18]]
+  ↳ app/controllers/poems_controller.rb:75
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:75
+Redirected to http://localhost:3000/poems/18
+Completed 302 Found in 7ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/poems/18" for ::1 at 2019-04-15 13:40:43 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.3ms)
+  Rendered poems/show.html.erb within layouts/application (23.9ms)
+Completed 200 OK in 53ms (Views: 50.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/poems/18/cycle_lines" for ::1 at 2019-04-15 13:40:44 -0400
+Processing by PoemsController#cycle_lines as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vf1vCfsrj35rMtBkODHlKaDu+kUJz382wsR16DEk9fSJsnsijUiqLuICN4XM81HfYEeOWhgBooEteReopiTmMw==", "commit"=>"Cycle lines", "poem_id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:72
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:75
+  [1m[36mPoem Update (0.3ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "little snow, are beginning to look for\r\nhow long it will be to touch\r\nits blue whispering. And in the nothingness\r\ngoldenrod and the endless wind over which\r\n \r\nthe air, especially those with\r\nthe comfortable tails shifts a many\r\nthe leaves being crowned with the shadows\r\nthe field that will come—six, a hollows—to sleep\r\nwind to be on its evening.\r\ninside their way? And don’t you hear\r\nearth of dream? And don’t you think\r\nits piled first tuffets. The fox wags\r\nthe bodies instead of the\r\ngoodbye of the firewood and the white\r\nthe birds stiffens dozen,\r\nDon’t you imagine the mossy longing now\r\npond of freshets? The everlasting\r\nthe trees runs so quickly brings out\r\n"], ["updated_at", "2019-04-15 17:40:44.359892"], ["id", 18]]
+  ↳ app/controllers/poems_controller.rb:75
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:75
+Redirected to http://localhost:3000/poems/18
+Completed 302 Found in 9ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/poems/18" for ::1 at 2019-04-15 13:40:44 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.3ms)
+  Rendered poems/show.html.erb within layouts/application (21.3ms)
+Completed 200 OK in 45ms (Views: 42.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/poems/18/cycle_lines" for ::1 at 2019-04-15 13:40:45 -0400
+Processing by PoemsController#cycle_lines as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"m5GzTIe2lZWwDIGHul+IPlTfBy8nwuLJXuzz8XQY6Nuv3qdn8dWwxTk8ZmZOnTzIlHZzMDYMP36xUZGx4xj7HA==", "commit"=>"Cycle lines", "poem_id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:72
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:75
+  [1m[36mPoem Update (0.4ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "the trees runs so quickly brings out\r\nlittle snow, are beginning to look for\r\nhow long it will be to touch\r\nits blue whispering. And in the nothingness\r\ngoldenrod and the endless wind over which\r\n \r\nthe air, especially those with\r\nthe comfortable tails shifts a many\r\nthe leaves being crowned with the shadows\r\nthe field that will come—six, a hollows—to sleep\r\nwind to be on its evening.\r\ninside their way? And don’t you hear\r\nearth of dream? And don’t you think\r\nits piled first tuffets. The fox wags\r\nthe bodies instead of the\r\ngoodbye of the firewood and the white\r\nthe birds stiffens dozen,\r\nDon’t you imagine the mossy longing now\r\npond of freshets? The everlasting\r\n"], ["updated_at", "2019-04-15 17:40:45.202060"], ["id", 18]]
+  ↳ app/controllers/poems_controller.rb:75
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:75
+Redirected to http://localhost:3000/poems/18
+Completed 302 Found in 8ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/poems/18" for ::1 at 2019-04-15 13:40:45 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.3ms)
+  Rendered poems/show.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 43ms (Views: 39.7ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/poems/18/cycle_lines" for ::1 at 2019-04-15 13:40:45 -0400
+Processing by PoemsController#cycle_lines as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/JIg23FhpZ36nx3s/s+463lj4jwzV6HBiVS3+zakyljI3TTwBwKAzXOv+g0KDQwducqWIyKZfHZm6dW7oaTZnw==", "commit"=>"Cycle lines", "poem_id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:72
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:75
+  [1m[36mPoem Update (0.3ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "pond of freshets? The everlasting\r\nthe trees runs so quickly brings out\r\nlittle snow, are beginning to look for\r\nhow long it will be to touch\r\nits blue whispering. And in the nothingness\r\ngoldenrod and the endless wind over which\r\n \r\nthe air, especially those with\r\nthe comfortable tails shifts a many\r\nthe leaves being crowned with the shadows\r\nthe field that will come—six, a hollows—to sleep\r\nwind to be on its evening.\r\ninside their way? And don’t you hear\r\nearth of dream? And don’t you think\r\nits piled first tuffets. The fox wags\r\nthe bodies instead of the\r\ngoodbye of the firewood and the white\r\nthe birds stiffens dozen,\r\nDon’t you imagine the mossy longing now\r\n"], ["updated_at", "2019-04-15 17:40:45.867867"], ["id", 18]]
+  ↳ app/controllers/poems_controller.rb:75
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:75
+Redirected to http://localhost:3000/poems/18
+Completed 302 Found in 8ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/poems/18" for ::1 at 2019-04-15 13:40:45 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.6ms)
+  Rendered poems/show.html.erb within layouts/application (26.2ms)
+Completed 200 OK in 49ms (Views: 46.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/poems/18/cycle_lines" for ::1 at 2019-04-15 13:40:47 -0400
+Processing by PoemsController#cycle_lines as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2tc4wj2Hn/vV4jhHe8VTlvQ/rCRwdTvhLcR1Z8WDLXnumCzpS+S6q1zS36aPB+dgNJbYO2G75lbCeRcnUoM+vg==", "commit"=>"Cycle lines", "poem_id"=>"18"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:72
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:75
+  [1m[36mPoem Update (0.3ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "Don’t you imagine the mossy longing now\r\npond of freshets? The everlasting\r\nthe trees runs so quickly brings out\r\nlittle snow, are beginning to look for\r\nhow long it will be to touch\r\nits blue whispering. And in the nothingness\r\ngoldenrod and the endless wind over which\r\n \r\nthe air, especially those with\r\nthe comfortable tails shifts a many\r\nthe leaves being crowned with the shadows\r\nthe field that will come—six, a hollows—to sleep\r\nwind to be on its evening.\r\ninside their way? And don’t you hear\r\nearth of dream? And don’t you think\r\nits piled first tuffets. The fox wags\r\nthe bodies instead of the\r\ngoodbye of the firewood and the white\r\nthe birds stiffens dozen,\r\n"], ["updated_at", "2019-04-15 17:40:47.333447"], ["id", 18]]
+  ↳ app/controllers/poems_controller.rb:75
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:75
+Redirected to http://localhost:3000/poems/18
+Completed 302 Found in 4ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/poems/18" for ::1 at 2019-04-15 13:40:47 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.3ms)
+  Rendered poems/show.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 42ms (Views: 38.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/poems/18/cycle_nouns" for ::1 at 2019-04-15 13:40:51 -0400
+Processing by PoemsController#cycle_nouns as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Rm5/lfQwAn8yeTv3CV/FeGi3wFOhs/1dBzMuTxRgpk9yIWu+glMnL7tJ3Bb9nXGOqB60TLB9IOrojkwPg2C1iA==", "commit"=>"Cycle nouns", "poem_id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:32
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:35
+  [1m[36mPoem Update (0.3ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "Don’t you imagine the mossy dozen now\r\nlonging of pond? The freshets\r\nthe everlasting runs so quickly brings out\r\nlittle trees, are beginning to look for\r\nhow long it will be to touch\r\nits blue snow. And in the whispering\r\nnothingness and the endless goldenrod over which\r\n \r\nthe wind, especially those with\r\nthe comfortable air shifts a many\r\nthe tails being crowned with the leaves\r\nthe shadows that will come—six, a hollows—to sleep\r\nfield to be on its wind.\r\ninside their evening? And don’t you hear\r\nway of earth? And don’t you think\r\nits piled first tuffets. The dream wags\r\nthe fox instead of the\r\nbodies of the goodbye and the white\r\nthe firewood stiffens birds,\r\n"], ["updated_at", "2019-04-15 17:40:52.384685"], ["id", 18]]
+  ↳ app/controllers/poems_controller.rb:35
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:35
+Redirected to http://localhost:3000/poems/18
+Completed 302 Found in 578ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/poems/18" for ::1 at 2019-04-15 13:40:52 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.2ms)
+  Rendered poems/show.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 36ms (Views: 33.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/poems/18/shuffle_lines" for ::1 at 2019-04-15 13:40:55 -0400
+Processing by PoemsController#shuffle_lines as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iSXdrIbeQtsVrOHqK07nbISSd4o7lVadRHxLNXSWl4K9asmH8L1ni5ycBgvfjFOaRDsDlSpbiyqrwSl145aERQ==", "commit"=>"Shuffle lines", "poem_id"=>"18"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:82
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:85
+  [1m[36mPoem Update (0.5ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "the everlasting runs so quickly brings out\r\ninside their evening? And don’t you hear\r\nbodies of the goodbye and the white\r\nthe firewood stiffens birds,\r\nlonging of pond? The freshets\r\nnothingness and the endless goldenrod over which\r\nthe wind, especially those with\r\nthe comfortable air shifts a many\r\nthe fox instead of the\r\nway of earth? And don’t you think\r\nlittle trees, are beginning to look for\r\n \r\nits piled first tuffets. The dream wags\r\nits blue snow. And in the whispering\r\nthe tails being crowned with the leaves\r\nDon’t you imagine the mossy dozen now\r\nthe shadows that will come—six, a hollows—to sleep\r\nfield to be on its wind.\r\nhow long it will be to touch\r\n"], ["updated_at", "2019-04-15 17:40:55.675151"], ["id", 18]]
+  ↳ app/controllers/poems_controller.rb:85
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:85
+Redirected to http://localhost:3000/poems/18
+Completed 302 Found in 9ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/poems/18" for ::1 at 2019-04-15 13:40:55 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.3ms)
+  Rendered poems/show.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 49ms (Views: 39.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/poems/18/shuffle_lines" for ::1 at 2019-04-15 13:40:57 -0400
+Processing by PoemsController#shuffle_lines as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zDOBwGwzKNVBPV1C5tQnmdoeotfzIFakzRXj/nb68yb4fJXrGlANhcgNuqMSFpNvGrfWyOLuixMiqIG+4frg4Q==", "commit"=>"Shuffle lines", "poem_id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:82
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:85
+  [1m[36mPoem Update (0.3ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "way of earth? And don’t you think\r\nnothingness and the endless goldenrod over which\r\nits blue snow. And in the whispering\r\n \r\nthe firewood stiffens birds,\r\nthe tails being crowned with the leaves\r\nthe wind, especially those with\r\nlittle trees, are beginning to look for\r\nbodies of the goodbye and the white\r\ninside their evening? And don’t you hear\r\nthe everlasting runs so quickly brings out\r\nDon’t you imagine the mossy dozen now\r\nits piled first tuffets. The dream wags\r\nthe fox instead of the\r\nhow long it will be to touch\r\nlonging of pond? The freshets\r\nthe comfortable air shifts a many\r\nthe shadows that will come—six, a hollows—to sleep\r\nfield to be on its wind.\r\n"], ["updated_at", "2019-04-15 17:40:57.464102"], ["id", 18]]
+  ↳ app/controllers/poems_controller.rb:85
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:85
+Redirected to http://localhost:3000/poems/18
+Completed 302 Found in 13ms (ActiveRecord: 6.8ms)
+
+
+Started GET "/poems/18" for ::1 at 2019-04-15 13:40:57 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.2ms)
+  Rendered poems/show.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 43ms (Views: 40.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/poems/18/shuffle_lines" for ::1 at 2019-04-15 13:40:58 -0400
+Processing by PoemsController#shuffle_lines as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kA7YBfoLJVEkxKY+orpJnZVuC9tCI0iIzna24wKBwGqkQcwujGgAAa30Qd9WeP1rVcd/xFPtlT8hy9SjlYHTrQ==", "commit"=>"Shuffle lines", "poem_id"=>"18"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:82
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:85
+  [1m[36mPoem Update (0.4ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", " \r\nway of earth? And don’t you think\r\nDon’t you imagine the mossy dozen now\r\nthe fox instead of the\r\nthe wind, especially those with\r\nthe shadows that will come—six, a hollows—to sleep\r\nlittle trees, are beginning to look for\r\nthe comfortable air shifts a many\r\nbodies of the goodbye and the white\r\nthe everlasting runs so quickly brings out\r\nthe firewood stiffens birds,\r\nnothingness and the endless goldenrod over which\r\nfield to be on its wind.\r\nlonging of pond? The freshets\r\nits piled first tuffets. The dream wags\r\nhow long it will be to touch\r\nits blue snow. And in the whispering\r\ninside their evening? And don’t you hear\r\nthe tails being crowned with the leaves\r\n"], ["updated_at", "2019-04-15 17:40:58.509431"], ["id", 18]]
+  ↳ app/controllers/poems_controller.rb:85
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:85
+Redirected to http://localhost:3000/poems/18
+Completed 302 Found in 14ms (ActiveRecord: 6.7ms)
+
+
+Started GET "/poems/18" for ::1 at 2019-04-15 13:40:58 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.3ms)
+  Rendered poems/show.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 47ms (Views: 44.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/poems/18/shuffle_lines" for ::1 at 2019-04-15 13:40:59 -0400
+Processing by PoemsController#shuffle_lines as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a4b62OeC7Zpl4pflAzD1+udWJKVNdj/GH73QmOWGYflfye7zkeHIyuzScAT38kEMJ/9Quly44nHwALLYcoZyPg==", "commit"=>"Shuffle lines", "poem_id"=>"18"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:82
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:85
+  [1m[36mPoem Update (0.4ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "field to be on its wind.\r\nthe everlasting runs so quickly brings out\r\nthe wind, especially those with\r\nthe firewood stiffens birds,\r\nlittle trees, are beginning to look for\r\nthe tails being crowned with the leaves\r\nthe comfortable air shifts a many\r\nits piled first tuffets. The dream wags\r\n \r\nthe fox instead of the\r\nbodies of the goodbye and the white\r\nDon’t you imagine the mossy dozen now\r\nhow long it will be to touch\r\nnothingness and the endless goldenrod over which\r\nthe shadows that will come—six, a hollows—to sleep\r\nway of earth? And don’t you think\r\nlonging of pond? The freshets\r\nits blue snow. And in the whispering\r\ninside their evening? And don’t you hear\r\n"], ["updated_at", "2019-04-15 17:40:59.522802"], ["id", 18]]
+  ↳ app/controllers/poems_controller.rb:85
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:85
+Redirected to http://localhost:3000/poems/18
+Completed 302 Found in 8ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/poems/18" for ::1 at 2019-04-15 13:40:59 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.2ms)
+  Rendered poems/show.html.erb within layouts/application (18.8ms)
+Completed 200 OK in 42ms (Views: 38.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/poems/18/shuffle_lines" for ::1 at 2019-04-15 13:41:00 -0400
+Processing by PoemsController#shuffle_lines as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"orDLO5ylt/ITr4sZ5sYPHpxTfuh/x6juPYxmP7zlCa+W/98Q6saSopqfbPgSBLvoXPoK924JdVnSMQR/K+UaaA==", "commit"=>"Shuffle lines", "poem_id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:82
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:85
+  [1m[36mPoem Update (0.3ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "the tails being crowned with the leaves\r\nthe everlasting runs so quickly brings out\r\nlittle trees, are beginning to look for\r\nthe wind, especially those with\r\nthe comfortable air shifts a many\r\ninside their evening? And don’t you hear\r\nhow long it will be to touch\r\nway of earth? And don’t you think\r\n \r\nbodies of the goodbye and the white\r\nnothingness and the endless goldenrod over which\r\nfield to be on its wind.\r\nlonging of pond? The freshets\r\nDon’t you imagine the mossy dozen now\r\nits blue snow. And in the whispering\r\nits piled first tuffets. The dream wags\r\nthe firewood stiffens birds,\r\nthe shadows that will come—six, a hollows—to sleep\r\nthe fox instead of the\r\n"], ["updated_at", "2019-04-15 17:41:00.333612"], ["id", 18]]
+  ↳ app/controllers/poems_controller.rb:85
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:85
+Redirected to http://localhost:3000/poems/18
+Completed 302 Found in 7ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/poems/18" for ::1 at 2019-04-15 13:41:00 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.3ms)
+  Rendered poems/show.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 42ms (Views: 38.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/poems/18/shuffle_lines" for ::1 at 2019-04-15 13:41:01 -0400
+Processing by PoemsController#shuffle_lines as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"U6KxBOQ4iwcSAbr193g9XExHcupOiZU4x32RaumRcstn7aUvkluuV5sxXRQDuomqjO4G9V9HSI8owPMqfpFhDA==", "commit"=>"Shuffle lines", "poem_id"=>"18"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:82
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:85
+  [1m[36mPoem Update (0.4ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "the firewood stiffens birds,\r\nway of earth? And don’t you think\r\nDon’t you imagine the mossy dozen now\r\nbodies of the goodbye and the white\r\nthe shadows that will come—six, a hollows—to sleep\r\nthe wind, especially those with\r\nhow long it will be to touch\r\nthe fox instead of the\r\nlonging of pond? The freshets\r\n \r\nits piled first tuffets. The dream wags\r\nthe tails being crowned with the leaves\r\nlittle trees, are beginning to look for\r\nits blue snow. And in the whispering\r\ninside their evening? And don’t you hear\r\nthe everlasting runs so quickly brings out\r\nfield to be on its wind.\r\nnothingness and the endless goldenrod over which\r\nthe comfortable air shifts a many\r\n"], ["updated_at", "2019-04-15 17:41:01.075951"], ["id", 18]]
+  ↳ app/controllers/poems_controller.rb:85
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:85
+Redirected to http://localhost:3000/poems/18
+Completed 302 Found in 14ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/poems/18" for ::1 at 2019-04-15 13:41:01 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.3ms)
+  Rendered poems/show.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 49ms (Views: 45.8ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/poems/18/shuffle_lines" for ::1 at 2019-04-15 13:41:01 -0400
+Processing by PoemsController#shuffle_lines as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TGowoyffxfNG0kXGx5LvJqll0z5zcMpI/IWjBzmHMch4JSSIUbzgo8/ioiczUFvQacynIWK+F/8TOMFHrociDw==", "commit"=>"Shuffle lines", "poem_id"=>"18"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:82
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:85
+  [1m[36mPoem Update (0.3ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "bodies of the goodbye and the white\r\n \r\nits blue snow. And in the whispering\r\nhow long it will be to touch\r\nthe fox instead of the\r\nits piled first tuffets. The dream wags\r\nlonging of pond? The freshets\r\nthe comfortable air shifts a many\r\nlittle trees, are beginning to look for\r\nthe firewood stiffens birds,\r\nthe shadows that will come—six, a hollows—to sleep\r\ninside their evening? And don’t you hear\r\nfield to be on its wind.\r\nnothingness and the endless goldenrod over which\r\nway of earth? And don’t you think\r\nthe tails being crowned with the leaves\r\nDon’t you imagine the mossy dozen now\r\nthe everlasting runs so quickly brings out\r\nthe wind, especially those with\r\n"], ["updated_at", "2019-04-15 17:41:01.823074"], ["id", 18]]
+  ↳ app/controllers/poems_controller.rb:85
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:85
+Redirected to http://localhost:3000/poems/18
+Completed 302 Found in 5ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/poems/18" for ::1 at 2019-04-15 13:41:01 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.3ms)
+  Rendered poems/show.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 49ms (Views: 45.5ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/poems/18/shuffle_lines" for ::1 at 2019-04-15 13:41:02 -0400
+Processing by PoemsController#shuffle_lines as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"s8dhA7HW7g8DgvUPrDHF8H/keHDH8UiVpB+FxxDunrqHiHUox7XLX4qyEu5Y83EGv00Mb9Y/lSJLoueHh+6NfQ==", "commit"=>"Shuffle lines", "poem_id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:82
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:85
+  [1m[36mPoem Update (0.4ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "bodies of the goodbye and the white\r\nlonging of pond? The freshets\r\nits blue snow. And in the whispering\r\nits piled first tuffets. The dream wags\r\nthe tails being crowned with the leaves\r\nthe firewood stiffens birds,\r\ninside their evening? And don’t you hear\r\nnothingness and the endless goldenrod over which\r\nthe shadows that will come—six, a hollows—to sleep\r\nDon’t you imagine the mossy dozen now\r\nhow long it will be to touch\r\nthe wind, especially those with\r\nfield to be on its wind.\r\nthe comfortable air shifts a many\r\nthe fox instead of the\r\nway of earth? And don’t you think\r\nthe everlasting runs so quickly brings out\r\nlittle trees, are beginning to look for\r\n \r\n"], ["updated_at", "2019-04-15 17:41:02.628733"], ["id", 18]]
+  ↳ app/controllers/poems_controller.rb:85
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:85
+Redirected to http://localhost:3000/poems/18
+Completed 302 Found in 9ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/poems/18" for ::1 at 2019-04-15 13:41:02 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.3ms)
+  Rendered poems/show.html.erb within layouts/application (32.4ms)
+Completed 200 OK in 67ms (Views: 58.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/poems/18/shuffle_lines" for ::1 at 2019-04-15 13:41:03 -0400
+Processing by PoemsController#shuffle_lines as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"unyjepieV5qMzx6Hw/tJz3KsuLezmOVa6FbHTzRtnTmOM7dR7v1yygX/+WY3Of05sgXMqKJWOO0H66UPo22O/g==", "commit"=>"Shuffle lines", "poem_id"=>"18"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:82
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:85
+  [1m[36mPoem Update (0.3ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "longing of pond? The freshets\r\nits piled first tuffets. The dream wags\r\nbodies of the goodbye and the white\r\nnothingness and the endless goldenrod over which\r\nthe tails being crowned with the leaves\r\nthe shadows that will come—six, a hollows—to sleep\r\nthe firewood stiffens birds,\r\nlittle trees, are beginning to look for\r\nhow long it will be to touch\r\nits blue snow. And in the whispering\r\nthe comfortable air shifts a many\r\ninside their evening? And don’t you hear\r\nway of earth? And don’t you think\r\nfield to be on its wind.\r\n \r\nDon’t you imagine the mossy dozen now\r\nthe fox instead of the\r\nthe wind, especially those with\r\nthe everlasting runs so quickly brings out\r\n"], ["updated_at", "2019-04-15 17:41:03.303682"], ["id", 18]]
+  ↳ app/controllers/poems_controller.rb:85
+  [1m[35m (7.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:85
+Redirected to http://localhost:3000/poems/18
+Completed 302 Found in 14ms (ActiveRecord: 8.0ms)
+
+
+Started GET "/poems/18" for ::1 at 2019-04-15 13:41:03 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.3ms)
+  Rendered poems/show.html.erb within layouts/application (32.0ms)
+Completed 200 OK in 55ms (Views: 51.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/poems/18/shuffle_lines" for ::1 at 2019-04-15 13:41:04 -0400
+Processing by PoemsController#shuffle_lines as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JNve++1cEtn5GQowElnHcLIVFx1wGtz8Knh0jhHSmPcQlMrQmz83iXAp7dHmm3OGcrxjAmHUAUvFxRbOhtKLMA==", "commit"=>"Shuffle lines", "poem_id"=>"18"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:82
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:85
+  [1m[36mPoem Update (0.5ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "the everlasting runs so quickly brings out\r\nhow long it will be to touch\r\nthe comfortable air shifts a many\r\nDon’t you imagine the mossy dozen now\r\nfield to be on its wind.\r\nlonging of pond? The freshets\r\nnothingness and the endless goldenrod over which\r\nthe fox instead of the\r\nlittle trees, are beginning to look for\r\nway of earth? And don’t you think\r\nits blue snow. And in the whispering\r\n \r\ninside their evening? And don’t you hear\r\nits piled first tuffets. The dream wags\r\nthe tails being crowned with the leaves\r\nthe firewood stiffens birds,\r\nthe shadows that will come—six, a hollows—to sleep\r\nbodies of the goodbye and the white\r\nthe wind, especially those with\r\n"], ["updated_at", "2019-04-15 17:41:04.044513"], ["id", 18]]
+  ↳ app/controllers/poems_controller.rb:85
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:85
+Redirected to http://localhost:3000/poems/18
+Completed 302 Found in 9ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/poems/18" for ::1 at 2019-04-15 13:41:04 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.2ms)
+  Rendered poems/show.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 41ms (Views: 37.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/poems/18/shuffle_lines" for ::1 at 2019-04-15 13:41:04 -0400
+Processing by PoemsController#shuffle_lines as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"B1LKD7ZDtUJWKmEZ9BMtgaqXNbb4XzuAC1t7NLEKaHczHd4kwCCQEt8ahvgA0Zl3aj5BqemR5jfk5hl0Jgp7sA==", "commit"=>"Shuffle lines", "poem_id"=>"18"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:82
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:85
+  [1m[36mPoem Update (0.3ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "Don’t you imagine the mossy dozen now\r\nthe wind, especially those with\r\nway of earth? And don’t you think\r\nnothingness and the endless goldenrod over which\r\nits piled first tuffets. The dream wags\r\ninside their evening? And don’t you hear\r\nthe comfortable air shifts a many\r\nthe tails being crowned with the leaves\r\nlonging of pond? The freshets\r\nthe firewood stiffens birds,\r\n \r\nlittle trees, are beginning to look for\r\nthe everlasting runs so quickly brings out\r\nhow long it will be to touch\r\nthe shadows that will come—six, a hollows—to sleep\r\nits blue snow. And in the whispering\r\nbodies of the goodbye and the white\r\nfield to be on its wind.\r\nthe fox instead of the\r\n"], ["updated_at", "2019-04-15 17:41:04.890473"], ["id", 18]]
+  ↳ app/controllers/poems_controller.rb:85
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:85
+Redirected to http://localhost:3000/poems/18
+Completed 302 Found in 9ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/poems/18" for ::1 at 2019-04-15 13:41:04 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.2ms)
+  Rendered poems/show.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 42ms (Views: 39.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/poems/18/shuffle_lines" for ::1 at 2019-04-15 13:41:05 -0400
+Processing by PoemsController#shuffle_lines as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pkyT9J770W9Bs5O5qydVEU0aLKkIEn+plSVyzel/I0CSA4ff6Jj0P8iDdFhf5eHnjbNYthncoh56mBCNfn8whw==", "commit"=>"Shuffle lines", "poem_id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:82
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:85
+  [1m[36mPoem Update (0.4ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "the shadows that will come—six, a hollows—to sleep\r\nlonging of pond? The freshets\r\nlittle trees, are beginning to look for\r\nthe firewood stiffens birds,\r\nfield to be on its wind.\r\nthe wind, especially those with\r\nthe fox instead of the\r\nthe everlasting runs so quickly brings out\r\nthe tails being crowned with the leaves\r\nDon’t you imagine the mossy dozen now\r\ninside their evening? And don’t you hear\r\nits piled first tuffets. The dream wags\r\nthe comfortable air shifts a many\r\n \r\nway of earth? And don’t you think\r\nhow long it will be to touch\r\nits blue snow. And in the whispering\r\nbodies of the goodbye and the white\r\nnothingness and the endless goldenrod over which\r\n"], ["updated_at", "2019-04-15 17:41:05.878398"], ["id", 18]]
+  ↳ app/controllers/poems_controller.rb:85
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:85
+Redirected to http://localhost:3000/poems/18
+Completed 302 Found in 10ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/poems/18" for ::1 at 2019-04-15 13:41:05 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.3ms)
+  Rendered poems/show.html.erb within layouts/application (26.2ms)
+Completed 200 OK in 49ms (Views: 46.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/poems/18/shuffle_lines" for ::1 at 2019-04-15 13:41:07 -0400
+Processing by PoemsController#shuffle_lines as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CfeWl1saOqcTjOl88QCN3ZPOFznH7vi+DAu+QVHFmf49uIK8LXkf95q8Dp0FwjkrU2djJtYgJQnjttwBxsWKOQ==", "commit"=>"Shuffle lines", "poem_id"=>"18"}
+  [1m[36mPoem Load (0.1ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:82
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/poems_controller.rb:85
+  [1m[36mPoem Update (0.4ms)[0m  [1m[33mUPDATE "poems" SET "text" = ?, "updated_at" = ? WHERE "poems"."id" = ?[0m  [["text", "nothingness and the endless goldenrod over which\r\nfield to be on its wind.\r\nthe tails being crowned with the leaves\r\nlittle trees, are beginning to look for\r\nthe firewood stiffens birds,\r\nits piled first tuffets. The dream wags\r\nthe comfortable air shifts a many\r\nDon’t you imagine the mossy dozen now\r\nhow long it will be to touch\r\nway of earth? And don’t you think\r\nthe shadows that will come—six, a hollows—to sleep\r\nthe fox instead of the\r\n \r\nlonging of pond? The freshets\r\ninside their evening? And don’t you hear\r\nits blue snow. And in the whispering\r\nthe everlasting runs so quickly brings out\r\nthe wind, especially those with\r\nbodies of the goodbye and the white\r\n"], ["updated_at", "2019-04-15 17:41:07.543803"], ["id", 18]]
+  ↳ app/controllers/poems_controller.rb:85
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/poems_controller.rb:85
+Redirected to http://localhost:3000/poems/18
+Completed 302 Found in 9ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/poems/18" for ::1 at 2019-04-15 13:41:07 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.3ms)
+  Rendered poems/show.html.erb within layouts/application (21.4ms)
+Completed 200 OK in 45ms (Views: 41.0ms | ActiveRecord: 0.2ms)
+
+

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     post "cycle_adjectives"
     post "shuffle_adjectives"
     post "cycle_lines"
+    post "shuffle_lines"
     get "about", :on => :collection
     get "delete"
   end

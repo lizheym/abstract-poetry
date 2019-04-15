@@ -28,9 +28,10 @@
           </div>
         </td>
         <td>
+
           <div class="margin-vertical">
-            <%= form_tag poem_cycle_adjectives_path(@poem.id), method: :post do %>
-              <%= submit_tag 'Cycle adjectives', :class => "btn btn-outline-secondary" %>
+            <%= form_tag poem_shuffle_nouns_path(@poem.id), method: :post  do %>
+              <%= submit_tag 'Shuffle nouns', :class => "btn btn-outline-secondary" %>
             <% end %>
           </div>
         </td>
@@ -38,8 +39,8 @@
       <tr>
         <td>
           <div class="margin-vertical">
-            <%= form_tag poem_shuffle_nouns_path(@poem.id), method: :post  do %>
-              <%= submit_tag 'Shuffle nouns', :class => "btn btn-outline-secondary" %>
+            <%= form_tag poem_cycle_adjectives_path(@poem.id), method: :post do %>
+              <%= submit_tag 'Cycle adjectives', :class => "btn btn-outline-secondary" %>
             <% end %>
           </div>
         </td>
@@ -61,10 +62,19 @@
         </td>
         <td>
           <div class="margin-vertical">
-            <button onclick="showHideOriginalPoem()" class="btn btn-outline-secondary" id="showOriginalPoem">Show Original</button>
+            <%= form_tag poem_shuffle_lines_path(@poem.id), method: :post  do %>
+              <%= submit_tag 'Shuffle lines', :class => "btn btn-outline-secondary" %>
+            <% end %>
           </div>
         </td>
       </tr>
     </tbody>
+      <tr>
+        <td>
+          <div class="margin-vertical">
+            <button onclick="showHideOriginalPoem()" class="btn btn-outline-secondary" id="showOriginalPoem">Show Original</button>
+          </div>
+        </td>
+      </tr>
   </table>
 </div>

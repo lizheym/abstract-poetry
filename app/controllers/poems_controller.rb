@@ -77,4 +77,14 @@ class PoemsController < ApplicationController
 
     redirect_to @poem
   end
+
+  def shuffle_lines
+    @poem = Poem.find(params[:poem_id])
+
+    if @poem.text.presence
+      @poem.update(:text => PoemsHelper.shuffle_lines_in_text(@poem.text))
+    end
+
+    redirect_to @poem
+  end
 end
