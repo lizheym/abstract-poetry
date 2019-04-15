@@ -41,6 +41,13 @@ module PoemsHelper
     self.fix_articles(text)
   end
 
+  def self.cycle_lines_in_text(text)
+    text = text.gsub("\r\n\r\n", "\r\n \r\n") # Preserve empty lines
+    split_by_lines = text.split("\r\n")
+    cycled_lines = cycle_array(split_by_lines)
+    cycled_lines.join("\r\n").concat("\r\n")
+  end
+
   def self.fix_articles(text)
     articles_in_order = self.get_articles_in_order(text)
     with_placeholders = self.replace_words_with_placeholders(text, articles_in_order)

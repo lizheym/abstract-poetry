@@ -54,6 +54,13 @@
       <tr>
         <td>
           <div class="margin-vertical">
+            <%= form_tag poem_cycle_lines_path(@poem.id), method: :post  do %>
+              <%= submit_tag 'Cycle lines', :class => "btn btn-outline-secondary" %>
+            <% end %>
+          </div>
+        </td>
+        <td>
+          <div class="margin-vertical">
             <button onclick="showHideOriginalPoem()" class="btn btn-outline-secondary" id="showOriginalPoem">Show Original</button>
           </div>
         </td>

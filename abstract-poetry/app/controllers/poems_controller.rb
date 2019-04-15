@@ -67,4 +67,14 @@ class PoemsController < ApplicationController
 
     redirect_to @poem
   end
+
+  def cycle_lines
+    @poem = Poem.find(params[:poem_id])
+
+    if @poem.text.presence
+      @poem.update(:text => PoemsHelper.cycle_lines_in_text(@poem.text))
+    end
+
+    redirect_to @poem
+  end
 end

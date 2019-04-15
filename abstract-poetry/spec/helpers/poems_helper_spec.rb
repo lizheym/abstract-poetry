@@ -36,6 +36,30 @@ class PoemsHelperTest < ActionDispatch::IntegrationTest
       end
     end
 
+    describe ".cycle_lines_in_text" do
+      let(:result) { PoemsHelper.cycle_lines_in_text(text) }
+      context "with a single line" do
+        let(:text) { "I was a lonely teenage broncin buck\r\n" }
+        it "is the original line" do
+          expect(result).to eq(text)
+        end
+      end
+
+      context "with a blank line" do
+        let(:text) { "With a pink carnation\r\n\r\nAnd a pickup truck\r\n" }
+        it "cycles the lines, incuding the blank line" do
+          expect(result).to eq("And a pickup truck\r\nWith a pink carnation\r\n \r\n")
+        end
+      end
+
+      context "with multiple lines" do
+        let(:text) { "And I knew I was out of luck\r\nThe day\r\nThe music died\r\n" }
+        it "cycles the lines" do
+          expect(result).to eq("The music died\r\nAnd I knew I was out of luck\r\nThe day\r\n")
+        end
+      end
+    end
+
     describe ".fix_articles" do
       context "with no articles" do
         it "is empty" do
