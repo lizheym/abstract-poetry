@@ -1,4 +1,4 @@
-require 'open-nlp'
+require 'engtagger'
 
 module PoemsHelper
   PLACEHOLDER = "XXXXXX".freeze
@@ -6,7 +6,7 @@ module PoemsHelper
   ADJECTIVE_LIST = ["JJ", "JJR", "JJS"].freeze
 
   def self.cycle_adjectives_in_text(text)
-    adjectives_in_order = self.get_words_in_order_by_part_of_speech(text, ADJECTIVE_LIST)
+    adjectives_in_order = self.get_adjectives_in_order(text)
     with_placeholders = self.replace_words_with_placeholders(text, adjectives_in_order)
     cycled_adjectives = self.cycle_array(adjectives_in_order)
     text = self.replace_placeholders_with_words(with_placeholders, cycled_adjectives)
@@ -15,7 +15,7 @@ module PoemsHelper
   end
 
   def self.shuffle_adjectives_in_text(text)
-    adjectives_in_order = self.get_words_in_order_by_part_of_speech(text, ADJECTIVE_LIST)
+    adjectives_in_order = self.get_adjectives_in_order(text)
     with_placeholders = self.replace_words_with_placeholders(text, adjectives_in_order)
     shuffled_adjectives = self.shuffle_array(adjectives_in_order)
     text = self.replace_placeholders_with_words(with_placeholders, shuffled_adjectives)
@@ -24,7 +24,7 @@ module PoemsHelper
   end
 
   def self.cycle_nouns_in_text(text)
-    nouns_in_order = self.get_words_in_order_by_part_of_speech(text, NOUN_LIST)
+    nouns_in_order = self.get_nouns_in_order(text)
     with_placeholders = self.replace_words_with_placeholders(text, nouns_in_order)
     cycled_nouns = self.cycle_array(nouns_in_order)
     text = self.replace_placeholders_with_words(with_placeholders, cycled_nouns)
@@ -33,7 +33,7 @@ module PoemsHelper
   end
 
   def self.shuffle_nouns_in_text(text)
-    nouns_in_order = self.get_words_in_order_by_part_of_speech(text, NOUN_LIST)
+    nouns_in_order = self.get_nouns_in_order(text)
     with_placeholders = self.replace_words_with_placeholders(text, nouns_in_order)
     shuffled_nouns = self.shuffle_array(nouns_in_order)
     text = self.replace_placeholders_with_words(with_placeholders, shuffled_nouns)
@@ -84,51 +84,90 @@ module PoemsHelper
     text
   end
 
-  def self.get_words_in_order_by_part_of_speech(string, parts_of_speech)
-    OpenNLP.load
-    tokenizer = OpenNLP::TokenizerME.new
-    tagger = OpenNLP::POSTaggerME.new
+  def self.get_nouns_in_order(raw_text)
+    tgr = EngTagger.new
+    tagged = tgr.add_tags(raw_text)
+    nouns = []
+    tokens = tagged.split(" ")
 
-    tokens = tokenizer.tokenize(string).to_a
-    tokens = tokens.map { |word| word.split("-") }.flatten # dash
-    tokens = tokens.map { |word| word.split("—") }.flatten # em dash
-    tokens = tokens.map { |word| word.split(".") }.flatten # em dash
+    tokens.each do |token|
+      if self.is_noun?(token)
+        noun = ActionView::Base.full_sanitizer.sanitize(token)
 
-    tags = tagger.tag(tokens).to_a
+        #if the last character is puncutation, remove it
+        if ["—", ".", "-", ";"].any? { |char| noun[-1] == char }
+          noun = noun[0...-1]
+        end
 
-    tokens.select.with_index { |token, index| parts_of_speech.include?(tags[index]) && is_alpha?(token) }
+        if self.is_alpha?(noun)
+          nouns << noun
+        end
+      end
+    end
+    nouns
+  end
+
+  def self.get_adjectives_in_order(raw_text)
+    tgr = EngTagger.new
+    tagged = tgr.add_tags(raw_text)
+    adjectives = []
+    tokens = tagged.split(" ")
+
+    tokens.each do |token|
+      if self.is_adjective?(token)
+        adjective = ActionView::Base.full_sanitizer.sanitize(token)
+
+        #if the last character is puncutation, remove it
+        if ["—", ".", "-", ";"].any? { |char| adjective[-1] == char }
+          adjective = adjective[0...-1]
+        end
+
+        if self.is_alpha?(adjective)
+          adjectives << adjective
+        end
+      end
+    end
+    adjectives
+  end
+
+  def self.get_adjectives(string)
+    tgr = EngTagger.new
+    tagged = tgr.add_tags(string)
+    tgr.get_adjectives(tagged)
   end
 
   def self.get_articles_in_order(string)
-    OpenNLP.load
-    tokenizer = OpenNLP::TokenizerME.new
+    words = string.split(/\W+/)
 
-    tokens = tokenizer.tokenize(string).to_a
-
-    tokens.select { |token| ["A", "An", "a", "an"].include?(token) }
+    words.select { |word| ["A", "An", "a", "an"].include?(word) }
   end
 
   def self.get_correct_articles(string)
-    OpenNLP.load
-    tokenizer = OpenNLP::TokenizerME.new
+    words = string.split(/\W+/)
 
-    tokens = tokenizer.tokenize(string).to_a
-
-    tokens.each_with_index.map do |token, index|
-      if ["A", "An"].include?(token)
-        if "aeiouAEIOU".chars.include?(tokens[index + 1][0])
+    words.each_with_index.map do |word, index|
+      if ["A", "An"].include?(word)
+        if "aeiouAEIOU".chars.include?(words[index + 1][0])
           "An"
         else
           "A"
         end
-      elsif ["a", "an"].include?(token)
-        if "aeiouAEIOU".chars.include?(tokens[index + 1][0])
+      elsif ["a", "an"].include?(word)
+        if "aeiouAEIOU".chars.include?(words[index + 1][0])
           "an"
         else
           "a"
         end
       end
     end.compact
+  end
+
+  def self.is_noun?(token)
+    token.match?(/<nn>.*<\/nn>/) || token.match?(/<nnp>.*<\/nnp>/) || token.match?(/<nnps>.*<\/nnps>/) || token.match?(/<nns>.*<\/nns>/)
+  end
+
+  def self.is_adjective?(token)
+    token.match?(/<jj>.*<\/jj>/) || token.match?(/<jjr>.*<\/jjr>/) || token.match?(/<jjs>.*<\/jjs>/)
   end
 
   def self.is_alpha?(string)

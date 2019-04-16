@@ -17,8 +17,8 @@ class PoemsHelperTest < ActionDispatch::IntegrationTest
         context "with a dash" do
           let(:text) { "I like the crazy-lady with the hair" }
 
-          it "cycles the nouns" do
-            expect(result).to eq("I like the crazy-hair with the lady")
+          it "does not include the word with the dash" do
+            expect(result).to eq("I like the crazy-lady with the hair")
           end
         end
 
@@ -190,72 +190,62 @@ class PoemsHelperTest < ActionDispatch::IntegrationTest
       end
     end
 
-    describe ".get_words_in_order_by_part_of_speech" do
-      let(:result) { PoemsHelper.get_words_in_order_by_part_of_speech(text, PoemsHelper::NOUN_LIST) }
+    describe ".get_nouns_in_order" do
+      let(:result) { PoemsHelper.get_nouns_in_order(text) }
 
-      context "nouns" do
-        context "with a simple sentence" do
-          let(:text) { "I gave my dog a gift for the holiday." }
+      context "with a simple sentence" do
+        let(:text) { "I gave my dog a gift for the holiday." }
 
-          it "returns the nouns in order" do
-            expect(result).to eq(["dog", "gift", "holiday"])
-          end
+        it "returns the nouns in order" do
+          expect(result).to eq(["dog", "gift", "holiday"])
         end
+      end
 
-        context "with proper nouns" do
-          let(:text) { "I gave Katie a gift for the holiday." }
+      context "with proper nouns" do
+        let(:text) { "I gave Katie a gift for the holiday." }
 
-          it "returns the nouns in order" do
-            expect(result).to eq(["Katie", "gift", "holiday"])
-          end
+        it "returns the nouns in order" do
+          expect(result).to eq(["Katie", "gift", "holiday"])
         end
+      end
 
-        context "with multiple sentences" do
-          let(:text) { "I gave Katie a gift for the holiday. She liked the shirt I gave her, but she wished it were a computer." }
+      context "with multiple sentences" do
+        let(:text) { "I gave Katie a gift for the holiday. She liked the shirt I gave her, but she wished it were a computer." }
 
-          it "returns the nouns in order" do
-            expect(result).to eq(["Katie", "gift", "holiday", "shirt", "computer"])
-          end
+        it "returns the nouns in order" do
+          expect(result).to eq(["Katie", "gift", "holiday", "shirt", "computer"])
         end
+      end
 
-        context "with a repeated noun" do
-          let(:text) { "I love my cat. What a good cat." }
+      context "with a repeated noun" do
+        let(:text) { "I love my cat. What a good cat." }
 
-          it "returns the nouns in order" do
-            expect(result).to eq(["cat", "cat"])
-          end
+        it "returns the nouns in order" do
+          expect(result).to eq(["cat", "cat"])
         end
+      end
 
-        context "with an em dash" do
-          let(:text) { "Birds fly quickly—birds with wings." }
+      context "with a dash" do
+        let(:text) { "Like quick-silver." }
 
-          it "returns the nouns in order" do
-            expect(result).to eq(["Birds", "birds", "wings"])
-          end
+        it "doesn't include as a noun" do
+          expect(result).to eq([])
         end
+      end
 
-        context "with a dash" do
-          let(:text) { "Like quick-silver." }
+      context "with a semicolon" do
+        let(:text) { "I like my birds; they have wings." }
 
-          it "returns the nouns in order" do
-            expect(result).to eq(["silver"])
-          end
+        it "returns the nouns in order" do
+          expect(result).to eq(["birds", "wings"])
         end
+      end
 
-        context "with a semicolon" do
-          let(:text) { "I like my birds; they have wings." }
+      context "with a quotation mark" do
+        let(:text) { "Birds say \"dog.\"" }
 
-          it "returns the nouns in order" do
-            expect(result).to eq(["birds", "wings"])
-          end
-        end
-
-        context "with a quotation mark" do
-          let(:text) { "Birds say \"dog.\"" }
-
-          it "doesn't include the noun enclosed in quotes" do
-            expect(result).to eq(["Birds"])
-          end
+        it "includes the noun enclosed in quotes" do
+          expect(result).to eq(["Birds", "dog"])
         end
       end
     end
@@ -345,6 +335,102 @@ class PoemsHelperTest < ActionDispatch::IntegrationTest
 
       context "with special characters" do
         let(:text) { "abcdABCD!!$$" }
+
+        it "is false" do
+          expect(result).to be false
+        end
+      end
+    end
+
+    describe ".is_noun?" do
+      let(:result) { PoemsHelper.is_noun?(text) }
+
+      context "is nn" do
+        let(:text) { "<nn>noun</nn>" }
+
+        it "is true" do
+          expect(result).to be true
+        end
+      end
+
+      context "is nnp" do
+        let(:text) { "<nnp>noun</nnp>" }
+
+        it "is true" do
+          expect(result).to be true
+        end
+      end
+
+      context "is nnps" do
+        let(:text) { "<nnps>noun</nnps>" }
+
+        it "is true" do
+          expect(result).to be true
+        end
+      end
+
+      context "is nns" do
+        let(:text) { "<nns>noun</nns>" }
+
+        it "is true" do
+          expect(result).to be true
+        end
+      end
+
+      context "has other tag" do
+        let(:text) { "<a>not</a>" }
+
+        it "is false" do
+          expect(result).to be false
+        end
+      end
+
+      context "has no tag" do
+        let(:text) { "not" }
+
+        it "is false" do
+          expect(result).to be false
+        end
+      end
+    end
+
+    describe ".is_adjective?" do
+      let(:result) { PoemsHelper.is_adjective?(text) }
+
+      context "is jj" do
+        let(:text) { "<jj>adjective</jj>" }
+
+        it "is true" do
+          expect(result).to be true
+        end
+      end
+
+      context "is jjr" do
+        let(:text) { "<jjr>adjective</jjr>" }
+
+        it "is true" do
+          expect(result).to be true
+        end
+      end
+
+      context "is jjs" do
+        let(:text) { "<jjs>adjective</jjs>" }
+
+        it "is true" do
+          expect(result).to be true
+        end
+      end
+
+      context "has other tag" do
+        let(:text) { "<a>not</a>" }
+
+        it "is false" do
+          expect(result).to be false
+        end
+      end
+
+      context "has no tag" do
+        let(:text) { "not" }
 
         it "is false" do
           expect(result).to be false

@@ -62,7 +62,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'engtagger'
-gem 'open-nlp'
 gem 'bootstrap'
 gem 'jquery-rails'
 
