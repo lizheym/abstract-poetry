@@ -11103,3 +11103,155 @@ Processing by PoemsController#show as HTML
 Completed 200 OK in 45ms (Views: 41.0ms | ActiveRecord: 0.2ms)
 
 
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (8123.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myapp_development"[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (214.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myapp_development"[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (206.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myapp_test"[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (500.6ms)[0m  [1m[35mCREATE DATABASE "myapp_development" ENCODING = 'unicode'[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (428.1ms)[0m  [1m[35mCREATE DATABASE "myapp_test" ENCODING = 'unicode'[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (17.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (42.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7864839756650184315)[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to CreatePoems (20190411142819)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (38.2ms)[0m  [1m[35mCREATE TABLE "poems" ("id" bigserial primary key, "title" character varying, "text" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190411142819_create_poems.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190411142819"]]
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to AddOriginalToPoems (20190415131835)
+  [1m[35m (39.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "poems" ADD "original" character varying[0m
+  ↳ db/migrate/20190415131835_add_original_to_poems.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190415131835"]]
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-07-11 18:58:29.016688"], ["updated_at", "2019-07-11 18:58:29.016688"]]
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7864839756650184315)[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7864839756650184315)[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to DeviseCreateUsers (20190711190019)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (47.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190711190019_devise_create_users.rb:5
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20190711190019_devise_create_users.rb:39
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  ↳ db/migrate/20190711190019_devise_create_users.rb:40
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190711190019"]]
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7864839756650184315)[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+Started GET "/users/sign_up" for ::1 at 2019-07-11 15:01:17 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/lizheym/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/devise-4.6.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/lizheym/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/devise-4.6.1/app/views/devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered /Users/lizheym/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/devise-4.6.1/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered /Users/lizheym/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/devise-4.6.1/app/views/devise/registrations/new.html.erb within layouts/application (42.8ms)
+Completed 200 OK in 2619ms (Views: 2597.8ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-07-11 15:01:49 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/lizheym/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/devise-4.6.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/lizheym/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/devise-4.6.1/app/views/devise/shared/_links.html.erb (1.2ms)
+  Rendered /Users/lizheym/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/devise-4.6.1/app/views/devise/sessions/new.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 50ms (Views: 46.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-07-11 15:01:54 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/lizheym/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/devise-4.6.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/lizheym/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/devise-4.6.1/app/views/devise/shared/_error_messages.html.erb (0.8ms)
+  Rendered /Users/lizheym/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/devise-4.6.1/app/views/devise/shared/_links.html.erb (1.4ms)
+  Rendered /Users/lizheym/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/devise-4.6.1/app/views/devise/registrations/new.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 63ms (Views: 62.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-07-11 15:02:11 -0400
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yc/dH5ovNj5szN8YBIeYEaQMupAJe9PW7zG4rs7BwLvND4M3dnnjiM6+Baf45R4pQQcX33Cx02OYck1MZ8kIcA==", "user"=>{"email"=>"lizizzle27@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "lizizzle27@gmail.com"], ["LIMIT", 1]]
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "lizizzle27@gmail.com"], ["encrypted_password", "$2a$11$HyJU9c4Jy4JldtTbznyJNu3UFVqT2KyaiTnhdYj6TAotRBCXYmhIu"], ["created_at", "2019-07-11 19:02:11.426527"], ["updated_at", "2019-07-11 19:02:11.426527"]]
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (68.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 219ms (ActiveRecord: 69.9ms)
+
+
+Started GET "/" for ::1 at 2019-07-11 15:02:11 -0400
+Processing by PoemsController#index as HTML
+  Rendering poems/index.html.erb within layouts/application
+  Rendered poems/_nav.html.erb (0.3ms)
+  [1m[36mPoem Load (0.6ms)[0m  [1m[34mSELECT "poems".* FROM "poems"[0m
+  ↳ app/views/poems/index.html.erb:20
+  Rendered poems/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 38ms (Views: 31.9ms | ActiveRecord: 2.0ms)
+
+
