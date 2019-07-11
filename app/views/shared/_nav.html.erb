@@ -2,8 +2,10 @@
   <a class="navbar-brand" href="/poems">OuLiPo</a>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
+    <% if current_user != nil %>
+      <a class="nav-item nav-link" href="/poems/my_poems">My Poems</a>
       <a class="nav-item nav-link" href="/poems/new">New Poem</a>
-      <a class="nav-item nav-link" href="/poems">All Poems</a>
+    <% end %>
       <a class="nav-item nav-link" href="/poems/about">About</a>
     </div>
   </div>

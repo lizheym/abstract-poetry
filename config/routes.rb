@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     get "new"
     post "create"
     get "show"
+    get "my_poems", :on => :collection
     post "cycle_nouns"
     post "shuffle_nouns"
     post "cycle_adjectives"

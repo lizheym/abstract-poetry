@@ -12543,3 +12543,1283 @@ Processing by Devise::RegistrationsController#new as HTML
 Completed 200 OK in 50ms (Views: 49.0ms | ActiveRecord: 0.0ms)
 
 
+  [1m[36mUser Load (41.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7864839756650184315)[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to AddUserIdToPoems (20190711200116)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "poems" ADD "user_id" integer[0m
+  ↳ db/migrate/20190711200116_add_user_id_to_poems.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190711200116"]]
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (40.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7864839756650184315)[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/bin/rake:23
+Started GET "/users/sign_up" for ::1 at 2019-07-11 16:05:16 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered /Users/lizheym/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/devise-4.6.1/app/views/devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered users/shared/_links.html.erb (1.0ms)
+  Rendered users/registrations/new.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 284ms (Views: 264.5ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/poems/new" for ::1 at 2019-07-11 16:05:18 -0400
+Processing by PoemsController#new as HTML
+  Rendering poems/new.html.erb within layouts/application
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered poems/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 44ms (Views: 29.9ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-07-11 16:05:19 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered users/shared/_links.html.erb (1.2ms)
+  Rendered users/sessions/new.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 55ms (Views: 52.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-07-11 16:05:25 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Wa8kXeSEf1GSfBOWAePIC3VHxuZzcpBm9zDOeuk/Eo3i+prZ06tH1vHVde5EppudEQ672YsCR7ccuHA/6OHKRQ==", "user"=>{"email"=>"lizizzle27@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "lizizzle27@gmail.com"], ["LIMIT", 1]]
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 142ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2019-07-11 16:05:25 -0400
+Processing by PoemsController#index as HTML
+  Rendering poems/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_nav.html.erb:11
+  Rendered shared/_nav.html.erb (2.2ms)
+  [1m[36mPoem Load (0.5ms)[0m  [1m[34mSELECT "poems".* FROM "poems"[0m
+  ↳ app/views/poems/index.html.erb:20
+  Rendered poems/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 29ms (Views: 27.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/poems/new" for ::1 at 2019-07-11 16:05:28 -0400
+Processing by PoemsController#new as HTML
+  Rendering poems/new.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_nav.html.erb:11
+  Rendered shared/_nav.html.erb (2.1ms)
+  Rendered poems/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 38ms (Views: 35.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/poems" for ::1 at 2019-07-11 16:05:33 -0400
+Processing by PoemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lGyV4Eh2C9snL2CKNIEHfbcmF0Y3YZr7WBRLWBAU1LHQhr0eEiMbCkf4beZQDjmion9qGB7UbpIpTeqm2TkQWg==", "poem"=>{"title"=>"Watering the Stones", "text"=>"Aaaaaaa"}, "commit"=>"Continue"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/poems_controller.rb:14
+  [1m[36mPoem Create (0.8ms)[0m  [1m[32mINSERT INTO "poems" ("title", "text", "created_at", "updated_at", "original", "user_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Watering the Stones"], ["text", "Aaaaaaa"], ["created_at", "2019-07-11 20:05:33.524837"], ["updated_at", "2019-07-11 20:05:33.524837"], ["original", "Aaaaaaa"], ["user_id", 1]]
+  ↳ app/controllers/poems_controller.rb:14
+  [1m[35m (39.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/poems_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/poems_controller.rb:16
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/poems_controller.rb:16
+Redirected to http://localhost:3000/poems/1
+Completed 302 Found in 46ms (ActiveRecord: 40.8ms)
+
+
+Started GET "/poems/1" for ::1 at 2019-07-11 16:05:33 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_nav.html.erb:11
+  Rendered shared/_nav.html.erb (2.0ms)
+  Rendered poems/show.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 43ms (Views: 37.4ms | ActiveRecord: 0.5ms)
+
+
+  [1m[36mPoem Load (0.5ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/poems" for ::1 at 2019-07-11 16:06:25 -0400
+Processing by PoemsController#index as HTML
+  Rendering poems/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_nav.html.erb:11
+  Rendered shared/_nav.html.erb (2.1ms)
+  [1m[36mPoem Load (0.3ms)[0m  [1m[34mSELECT "poems".* FROM "poems"[0m
+  ↳ app/views/poems/index.html.erb:20
+  Rendered poems/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 40ms (Views: 36.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/poems" for ::1 at 2019-07-11 16:06:45 -0400
+Processing by PoemsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:5
+  Rendering poems/index.html.erb within layouts/application
+  Rendered shared/_nav.html.erb (0.6ms)
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/poems/index.html.erb:20
+  Rendered poems/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 51ms (Views: 35.0ms | ActiveRecord: 5.2ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2019-07-11 16:06:46 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"UY/ajHCWGc3av+/EqnSEDtBBf46EmBzxzbS8YHqAB5gpUUyfK06maOW+4apo7JBc8sMTptd47fFgf//+yU3TDg=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 12ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2019-07-11 16:06:46 -0400
+Processing by PoemsController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/poems_controller.rb:5:in `index'
+Started GET "/" for ::1 at 2019-07-11 16:06:57 -0400
+Processing by PoemsController#index as HTML
+  Rendering poems/index.html.erb within layouts/application
+  Rendered shared/_nav.html.erb (0.9ms)
+  [1m[36mPoem Load (0.5ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" IS NULL[0m
+  ↳ app/views/poems/index.html.erb:20
+  Rendered poems/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 36ms (Views: 30.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/poems/new" for ::1 at 2019-07-11 16:06:58 -0400
+Processing by PoemsController#new as HTML
+  Rendering poems/new.html.erb within layouts/application
+  Rendered shared/_nav.html.erb (0.9ms)
+  Rendered poems/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 45ms (Views: 32.1ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/poems" for ::1 at 2019-07-11 16:07:06 -0400
+Processing by PoemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nOy/dnORXQ8aquE+svtAYYoPI2nBsxjtalZetUvTI5JhTtrWeFmF7xSXALnqR92i/Bzfu2aPp8IVpPfWK5rY2w==", "poem"=>{"title"=>"Angels", "text"=>"BBbbbbbbbbb"}, "commit"=>"Continue"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/poems_controller.rb:13:in `create'
+Started GET "/poems/new" for ::1 at 2019-07-11 16:07:16 -0400
+Processing by PoemsController#new as HTML
+  Rendering poems/new.html.erb within layouts/application
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered poems/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 38ms (Views: 27.0ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/poems" for ::1 at 2019-07-11 16:07:22 -0400
+Processing by PoemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ccwylqBxCf9Z7w9SpuLJAxLVlvTedhjcqmON5mT0gqqw3qA+hfhEv8fW0u4oLCJZAC/O5oMb2Em5w7toIQyAYA==", "poem"=>{"title"=>"Angels", "text"=>"BBbbbbbbbbb"}, "commit"=>"Continue"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/poems_controller.rb:14
+  [1m[36mPoem Create (0.3ms)[0m  [1m[32mINSERT INTO "poems" ("title", "text", "created_at", "updated_at", "original") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Angels"], ["text", "BBbbbbbbbbb"], ["created_at", "2019-07-11 20:07:22.707293"], ["updated_at", "2019-07-11 20:07:22.707293"], ["original", "BBbbbbbbbbb"]]
+  ↳ app/controllers/poems_controller.rb:14
+  [1m[35m (40.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/poems_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/poems_controller.rb:16
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/poems_controller.rb:16
+Redirected to http://localhost:3000/poems/2
+Completed 302 Found in 45ms (ActiveRecord: 40.9ms)
+
+
+Started GET "/poems/2" for ::1 at 2019-07-11 16:07:22 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPoem Load (0.3ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  Rendered shared/_nav.html.erb (0.8ms)
+  Rendered poems/show.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 40ms (Views: 37.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/poems" for ::1 at 2019-07-11 16:07:24 -0400
+Processing by PoemsController#index as HTML
+  Rendering poems/index.html.erb within layouts/application
+  Rendered shared/_nav.html.erb (1.4ms)
+  [1m[36mPoem Load (0.4ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" IS NULL[0m
+  ↳ app/views/poems/index.html.erb:20
+  Rendered poems/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 47ms (Views: 43.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/poems" for ::1 at 2019-07-11 16:07:26 -0400
+Processing by PoemsController#index as HTML
+  Rendering poems/index.html.erb within layouts/application
+  Rendered shared/_nav.html.erb (0.6ms)
+  [1m[36mPoem Load (0.4ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" IS NULL[0m
+  ↳ app/views/poems/index.html.erb:20
+  Rendered poems/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 35ms (Views: 32.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-07-11 16:07:28 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered users/shared/_links.html.erb (0.9ms)
+  Rendered users/sessions/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 51ms (Views: 36.8ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-07-11 16:07:34 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5LXf8uhd5SuxwrBW+bZaRXGqYzArRKejDbxn0AJJPnHsjlIhdJJlfpAlBe01nqXyQIV7kYooNNrKzRlRonBq9w==", "user"=>{"email"=>"lizizzle27@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "lizizzle27@gmail.com"], ["LIMIT", 1]]
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 132ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-07-11 16:07:34 -0400
+Processing by PoemsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:5
+  Rendering poems/index.html.erb within layouts/application
+  Rendered shared/_nav.html.erb (0.7ms)
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/poems/index.html.erb:20
+  Rendered poems/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 29ms (Views: 25.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/poems" for ::1 at 2019-07-11 16:07:54 -0400
+Processing by PoemsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:5
+  Rendering poems/index.html.erb within layouts/application
+  Rendered shared/_nav.html.erb (0.7ms)
+  [1m[36mPoem Load (0.4ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/poems/index.html.erb:20
+  Rendered poems/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 42ms (Views: 38.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/poems/about" for ::1 at 2019-07-11 16:07:56 -0400
+Processing by PoemsController#about as HTML
+  Rendering poems/about.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_nav.html.erb:11
+  Rendered shared/_nav.html.erb (1.7ms)
+  Rendered poems/about.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 32ms (Views: 29.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/poems" for ::1 at 2019-07-11 16:07:57 -0400
+Processing by PoemsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:5
+  Rendering poems/index.html.erb within layouts/application
+  Rendered shared/_nav.html.erb (0.7ms)
+  [1m[36mPoem Load (0.3ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/poems/index.html.erb:20
+  Rendered poems/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 45ms (Views: 40.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/poems/new" for ::1 at 2019-07-11 16:07:58 -0400
+Processing by PoemsController#new as HTML
+  Rendering poems/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_nav.html.erb:11
+  Rendered shared/_nav.html.erb (2.2ms)
+  Rendered poems/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 40ms (Views: 36.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/poems" for ::1 at 2019-07-11 16:07:59 -0400
+Processing by PoemsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:5
+  Rendering poems/index.html.erb within layouts/application
+  Rendered shared/_nav.html.erb (0.7ms)
+  [1m[36mPoem Load (0.4ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/poems/index.html.erb:20
+  Rendered poems/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 51ms (Views: 46.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/poems/1" for ::1 at 2019-07-11 16:10:40 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPoem Load (0.4ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:21
+  Rendering poems/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_nav.html.erb:11
+  Rendered shared/_nav.html.erb (1.7ms)
+  Rendered poems/show.html.erb within layouts/application (20.4ms)
+Completed 200 OK in 43ms (Views: 39.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/poems" for ::1 at 2019-07-11 16:10:42 -0400
+Processing by PoemsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:5
+  Rendering poems/index.html.erb within layouts/application
+  Rendered shared/_nav.html.erb (1.0ms)
+  [1m[36mPoem Load (0.4ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/poems/index.html.erb:20
+  Rendered poems/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 45ms (Views: 39.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/poems" for ::1 at 2019-07-11 16:10:42 -0400
+Processing by PoemsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:5
+  Rendering poems/index.html.erb within layouts/application
+  Rendered shared/_nav.html.erb (0.5ms)
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/poems/index.html.erb:20
+  Rendered poems/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 37ms (Views: 33.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/poems" for ::1 at 2019-07-11 16:10:42 -0400
+Processing by PoemsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:5
+  Rendering poems/index.html.erb within layouts/application
+  Rendered shared/_nav.html.erb (1.0ms)
+  [1m[36mPoem Load (0.3ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/poems/index.html.erb:20
+  Rendered poems/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 48ms (Views: 43.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/poems" for ::1 at 2019-07-11 16:10:42 -0400
+Processing by PoemsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:5
+  Rendering poems/index.html.erb within layouts/application
+  Rendered shared/_nav.html.erb (0.7ms)
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/poems/index.html.erb:20
+  Rendered poems/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 40ms (Views: 35.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/poems" for ::1 at 2019-07-11 16:10:42 -0400
+Processing by PoemsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:5
+  Rendering poems/index.html.erb within layouts/application
+  Rendered shared/_nav.html.erb (0.8ms)
+  [1m[36mPoem Load (0.3ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/poems/index.html.erb:20
+  Rendered poems/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 42ms (Views: 38.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/poems" for ::1 at 2019-07-11 16:10:42 -0400
+Processing by PoemsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:5
+  Rendering poems/index.html.erb within layouts/application
+  Rendered shared/_nav.html.erb (0.9ms)
+  [1m[36mPoem Load (0.3ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/poems/index.html.erb:20
+  Rendered poems/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 42ms (Views: 38.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/poems" for ::1 at 2019-07-11 16:10:42 -0400
+Processing by PoemsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:5
+  Rendering poems/index.html.erb within layouts/application
+  Rendered shared/_nav.html.erb (1.0ms)
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/poems/index.html.erb:20
+  Rendered poems/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 51ms (Views: 47.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/poems" for ::1 at 2019-07-11 16:10:42 -0400
+Processing by PoemsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:5
+  Rendering poems/index.html.erb within layouts/application
+  Rendered shared/_nav.html.erb (0.8ms)
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/poems/index.html.erb:20
+  Rendered poems/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 47ms (Views: 42.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/poems" for ::1 at 2019-07-11 16:10:42 -0400
+Processing by PoemsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:5
+  Rendering poems/index.html.erb within layouts/application
+  Rendered shared/_nav.html.erb (0.7ms)
+  [1m[36mPoem Load (0.3ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/poems/index.html.erb:20
+  Rendered poems/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 60ms (Views: 54.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/poems/new" for ::1 at 2019-07-11 16:10:44 -0400
+Processing by PoemsController#new as HTML
+  Rendering poems/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_nav.html.erb:11
+  Rendered shared/_nav.html.erb (2.7ms)
+  Rendered poems/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 57ms (Views: 54.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/poems" for ::1 at 2019-07-11 16:10:44 -0400
+Processing by PoemsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:5
+  Rendering poems/index.html.erb within layouts/application
+  Rendered shared/_nav.html.erb (2.0ms)
+  [1m[36mPoem Load (0.4ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/poems/index.html.erb:20
+  Rendered poems/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 60ms (Views: 53.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/poems/new" for ::1 at 2019-07-11 16:10:46 -0400
+Processing by PoemsController#new as HTML
+  Rendering poems/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_nav.html.erb:11
+  Rendered shared/_nav.html.erb (1.9ms)
+  Rendered poems/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 43ms (Views: 41.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/poems" for ::1 at 2019-07-11 16:10:48 -0400
+Processing by PoemsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:5
+  Rendering poems/index.html.erb within layouts/application
+  Rendered shared/_nav.html.erb (0.7ms)
+  [1m[36mPoem Load (0.3ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/poems/index.html.erb:20
+  Rendered poems/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 45ms (Views: 38.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/poems" for ::1 at 2019-07-11 16:11:14 -0400
+Processing by PoemsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:5
+  Rendering poems/index.html.erb within layouts/application
+  Rendered shared/_nav.html.erb (0.7ms)
+  [1m[36mPoem Load (0.3ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/poems/index.html.erb:20
+  Rendered poems/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 38ms (Views: 34.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/poems" for ::1 at 2019-07-11 16:12:35 -0400
+Processing by PoemsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:5
+  Rendering poems/index.html.erb within layouts/application
+  Rendered shared/_nav.html.erb (0.7ms)
+  [1m[36mPoem Load (0.4ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/poems/index.html.erb:20
+  Rendered poems/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 37ms (Views: 33.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/poems" for ::1 at 2019-07-11 16:12:37 -0400
+Processing by PoemsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:5
+  Rendering poems/index.html.erb within layouts/application
+  Rendered shared/_nav.html.erb (0.6ms)
+  [1m[36mPoem Load (0.3ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/poems/index.html.erb:20
+  Rendered poems/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 44ms (Views: 40.2ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2019-07-11 16:12:38 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"AcEdYjSHG9p+laEAxI++inA9za3LcRoZW9fZb+pFBLGW3mEb1bobrcQlqVsOw8P2Ou6Awvi5sMBuxXEVmNcFBg=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2019-07-11 16:12:38 -0400
+Processing by PoemsController#index as HTML
+  Rendering poems/index.html.erb within layouts/application
+  Rendered shared/_nav.html.erb (3.3ms)
+  Rendered poems/index.html.erb within layouts/application (5.4ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    2:   <a class="navbar-brand" href="/poems">OuLiPo</a>
+    3:   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    4:     <div class="navbar-nav">
+    5:     <% if current_user.id != nil %>
+    6:       <a class="nav-item nav-link" href="/poems/new">New Poem</a>
+    7:       <a class="nav-item nav-link" href="/poems">My Poems</a>
+    8:     <% end %>
+  
+app/views/shared/_nav.html.erb:5:in `_app_views_shared__nav_html_erb__3237289538078638028_70095032734940'
+app/views/poems/index.html.erb:5:in `_app_views_poems_index_html_erb___3322668677043183209_70095032780060'
+Started GET "/" for ::1 at 2019-07-11 16:12:50 -0400
+Processing by PoemsController#index as HTML
+  Rendering poems/index.html.erb within layouts/application
+  Rendered shared/_nav.html.erb (0.6ms)
+  [1m[36mPoem Load (0.4ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" IS NULL[0m
+  ↳ app/views/poems/index.html.erb:20
+  Rendered poems/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 35ms (Views: 31.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/poems/about" for ::1 at 2019-07-11 16:12:53 -0400
+Processing by PoemsController#about as HTML
+  Rendering poems/about.html.erb within layouts/application
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered poems/about.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 29ms (Views: 27.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/poems" for ::1 at 2019-07-11 16:12:55 -0400
+Processing by PoemsController#index as HTML
+  Rendering poems/index.html.erb within layouts/application
+  Rendered shared/_nav.html.erb (0.7ms)
+  [1m[36mPoem Load (0.4ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" IS NULL[0m
+  ↳ app/views/poems/index.html.erb:20
+  Rendered poems/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 39ms (Views: 36.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/poems" for ::1 at 2019-07-11 16:13:57 -0400
+Processing by PoemsController#index as HTML
+  Rendering poems/index.html.erb within layouts/application
+  Rendered shared/_nav.html.erb (0.7ms)
+  [1m[36mPoem Load (0.4ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" IS NULL[0m
+  ↳ app/views/poems/index.html.erb:20
+  Rendered poems/index.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 50ms (Views: 37.5ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/poems" for ::1 at 2019-07-11 16:14:18 -0400
+Processing by PoemsController#index as HTML
+  Rendering poems/index.html.erb within layouts/application
+  Rendered shared/_nav.html.erb (0.7ms)
+  [1m[36mPoem Load (0.4ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" IS NULL[0m
+  ↳ app/views/poems/index.html.erb:20
+  Rendered poems/index.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 42ms (Views: 35.2ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/poems" for ::1 at 2019-07-11 16:15:00 -0400
+Processing by PoemsController#index as HTML
+  Rendering poems/index.html.erb within layouts/application
+  Rendered shared/_nav.html.erb (1.1ms)
+  [1m[36mPoem Load (0.4ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" IS NULL[0m
+  ↳ app/views/poems/index.html.erb:20
+  Rendered poems/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 36ms (Views: 33.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-07-11 16:15:02 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered users/shared/_links.html.erb (1.1ms)
+  Rendered users/sessions/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 48ms (Views: 35.9ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-07-11 16:15:07 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JTN9zmYAoPnFibNdl0fIslSjcLX90+JrQTFI4vW2GmloQd3r4ZXsu4EIK4s6mepDloqKfN5P4YDvN5neC4/zMw==", "user"=>{"email"=>"lizizzle27@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "lizizzle27@gmail.com"], ["LIMIT", 1]]
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 130ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2019-07-11 16:15:07 -0400
+Processing by PoemsController#index as HTML
+  Rendering poems/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_nav.html.erb:5
+  Rendered shared/_nav.html.erb (1.5ms)
+  [1m[36mPoem Load (0.3ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" IS NULL[0m
+  ↳ app/views/poems/index.html.erb:20
+  Rendered poems/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 28ms (Views: 26.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/my_poems" for ::1 at 2019-07-11 16:15:08 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/my_poems"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/my_poems" for ::1 at 2019-07-11 16:15:25 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/my_poems"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-07-11 16:15:28 -0400
+Processing by PoemsController#index as HTML
+  Rendering poems/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_nav.html.erb:5
+  Rendered shared/_nav.html.erb (13.5ms)
+  [1m[36mPoem Load (0.5ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" IS NULL[0m
+  ↳ app/views/poems/index.html.erb:20
+  Rendered poems/index.html.erb within layouts/application (23.3ms)
+Completed 200 OK in 61ms (Views: 48.8ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/my_poems" for ::1 at 2019-07-11 16:15:29 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/my_poems"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/my_poems" for ::1 at 2019-07-11 16:15:50 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/my_poems"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-07-11 16:15:54 -0400
+Processing by PoemsController#index as HTML
+  Rendering poems/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_nav.html.erb:5
+  Rendered shared/_nav.html.erb (18.3ms)
+  [1m[36mPoem Load (0.3ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" IS NULL[0m
+  ↳ app/views/poems/index.html.erb:20
+  Rendered poems/index.html.erb within layouts/application (32.2ms)
+Completed 200 OK in 86ms (Views: 75.2ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/my_poems" for ::1 at 2019-07-11 16:15:55 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/my_poems"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-07-11 16:17:35 -0400
+Processing by PoemsController#index as HTML
+  Rendering poems/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_nav.html.erb:5
+  Rendered shared/_nav.html.erb (2.2ms)
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" IS NULL[0m
+  ↳ app/views/poems/index.html.erb:20
+  Rendered poems/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 44ms (Views: 40.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/my_poems" for ::1 at 2019-07-11 16:17:39 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/my_poems"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/my_poems" for ::1 at 2019-07-11 16:18:07 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/my_poems"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/my_poems" for ::1 at 2019-07-11 16:20:13 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/my_poems"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-07-11 16:20:16 -0400
+Processing by PoemsController#index as HTML
+  Rendering poems/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_nav.html.erb:5
+  Rendered shared/_nav.html.erb (17.4ms)
+  [1m[36mPoem Load (0.7ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" IS NULL[0m
+  ↳ app/views/poems/index.html.erb:20
+  Rendered poems/index.html.erb within layouts/application (28.5ms)
+Completed 200 OK in 302ms (Views: 289.6ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/my_poems" for ::1 at 2019-07-11 16:20:17 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/my_poems"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-07-11 16:21:40 -0400
+Processing by PoemsController#index as HTML
+  Rendering poems/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_nav.html.erb:5
+  Rendered shared/_nav.html.erb (2.5ms)
+  [1m[36mPoem Load (0.3ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" IS NULL[0m
+  ↳ app/views/poems/index.html.erb:20
+  Rendered poems/index.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 52ms (Views: 48.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/poems/my_poems" for ::1 at 2019-07-11 16:21:41 -0400
+Processing by PoemsController#my_poems as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:9
+  Rendering poems/my_poems.erb within layouts/application
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered poems/my_poems.erb within layouts/application (3.5ms)
+Completed 200 OK in 40ms (Views: 36.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/poems/my_poems" for ::1 at 2019-07-11 16:22:01 -0400
+Processing by PoemsController#my_poems as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:9
+  Rendering poems/my_poems.erb within layouts/application
+  Rendered shared/_nav.html.erb (0.6ms)
+  [1m[36mPoem Load (0.3ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/poems/my_poems.erb:20
+  Rendered poems/my_poems.erb within layouts/application (4.1ms)
+Completed 200 OK in 37ms (Views: 33.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/poems" for ::1 at 2019-07-11 16:22:02 -0400
+Processing by PoemsController#index as HTML
+  Rendering poems/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_nav.html.erb:5
+  Rendered shared/_nav.html.erb (2.2ms)
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" IS NULL[0m
+  ↳ app/views/poems/index.html.erb:20
+  Rendered poems/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 37ms (Views: 34.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/poems/new" for ::1 at 2019-07-11 16:22:03 -0400
+Processing by PoemsController#new as HTML
+  Rendering poems/new.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_nav.html.erb:5
+  Rendered shared/_nav.html.erb (2.1ms)
+  Rendered poems/new.html.erb within layouts/application (24.9ms)
+Completed 200 OK in 58ms (Views: 54.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/poems/my_poems" for ::1 at 2019-07-11 16:22:05 -0400
+Processing by PoemsController#my_poems as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:9
+  Rendering poems/my_poems.erb within layouts/application
+  Rendered shared/_nav.html.erb (0.7ms)
+  [1m[36mPoem Load (0.3ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/poems/my_poems.erb:20
+  Rendered poems/my_poems.erb within layouts/application (4.6ms)
+Completed 200 OK in 40ms (Views: 36.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/poems/my_poems" for ::1 at 2019-07-11 16:22:11 -0400
+Processing by PoemsController#my_poems as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:9
+  Rendering poems/my_poems.erb within layouts/application
+  Rendered shared/_nav.html.erb (0.8ms)
+  [1m[36mPoem Load (0.4ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/poems/my_poems.erb:20
+  Rendered poems/my_poems.erb within layouts/application (4.9ms)
+Completed 200 OK in 37ms (Views: 33.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/poems" for ::1 at 2019-07-11 16:22:12 -0400
+Processing by PoemsController#index as HTML
+  Rendering poems/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_nav.html.erb:5
+  Rendered shared/_nav.html.erb (2.4ms)
+  [1m[36mPoem Load (0.3ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" IS NULL[0m
+  ↳ app/views/poems/index.html.erb:20
+  Rendered poems/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 39ms (Views: 36.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/poems/my_poems" for ::1 at 2019-07-11 16:22:21 -0400
+Processing by PoemsController#my_poems as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:9
+  Rendering poems/my_poems.erb within layouts/application
+  Rendered shared/_nav.html.erb (0.8ms)
+  [1m[36mPoem Load (0.4ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/poems/my_poems.erb:20
+  Rendered poems/my_poems.erb within layouts/application (5.1ms)
+Completed 200 OK in 51ms (Views: 45.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/poems/new" for ::1 at 2019-07-11 16:22:24 -0400
+Processing by PoemsController#new as HTML
+  Rendering poems/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_nav.html.erb:5
+  Rendered shared/_nav.html.erb (2.0ms)
+  Rendered poems/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 46ms (Views: 43.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/poems/about" for ::1 at 2019-07-11 16:22:25 -0400
+Processing by PoemsController#about as HTML
+  Rendering poems/about.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_nav.html.erb:5
+  Rendered shared/_nav.html.erb (1.7ms)
+  Rendered poems/about.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 30ms (Views: 27.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/poems" for ::1 at 2019-07-11 16:22:26 -0400
+Processing by PoemsController#index as HTML
+  Rendering poems/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_nav.html.erb:5
+  Rendered shared/_nav.html.erb (2.5ms)
+  [1m[36mPoem Load (0.5ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" IS NULL[0m
+  ↳ app/views/poems/index.html.erb:20
+  Rendered poems/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 42ms (Views: 38.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/poems" for ::1 at 2019-07-11 16:22:44 -0400
+Processing by PoemsController#index as HTML
+  Rendering poems/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_nav.html.erb:5
+  Rendered shared/_nav.html.erb (2.0ms)
+  [1m[36mPoem Load (0.4ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" IS NULL[0m
+  ↳ app/views/poems/index.html.erb:20
+  Rendered poems/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 38ms (Views: 34.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/poems" for ::1 at 2019-07-11 16:22:55 -0400
+Processing by PoemsController#index as HTML
+  Rendering poems/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_nav.html.erb:5
+  Rendered shared/_nav.html.erb (2.1ms)
+  [1m[36mPoem Load (0.2ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" IS NULL[0m
+  ↳ app/views/poems/index.html.erb:19
+  Rendered poems/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 38ms (Views: 34.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/poems/my_poems" for ::1 at 2019-07-11 16:22:58 -0400
+Processing by PoemsController#my_poems as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:9
+  Rendering poems/my_poems.erb within layouts/application
+  Rendered shared/_nav.html.erb (0.8ms)
+  [1m[36mPoem Load (0.3ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/poems/my_poems.erb:20
+  Rendered poems/my_poems.erb within layouts/application (4.8ms)
+Completed 200 OK in 45ms (Views: 41.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/poems" for ::1 at 2019-07-11 16:23:00 -0400
+Processing by PoemsController#index as HTML
+  Rendering poems/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_nav.html.erb:5
+  Rendered shared/_nav.html.erb (2.3ms)
+  [1m[36mPoem Load (0.3ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" IS NULL[0m
+  ↳ app/views/poems/index.html.erb:19
+  Rendered poems/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 42ms (Views: 39.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/poems/my_poems" for ::1 at 2019-07-11 16:23:00 -0400
+Processing by PoemsController#my_poems as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:9
+  Rendering poems/my_poems.erb within layouts/application
+  Rendered shared/_nav.html.erb (0.7ms)
+  [1m[36mPoem Load (0.6ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/poems/my_poems.erb:20
+  Rendered poems/my_poems.erb within layouts/application (5.8ms)
+Completed 200 OK in 44ms (Views: 37.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/poems/new" for ::1 at 2019-07-11 16:23:01 -0400
+Processing by PoemsController#new as HTML
+  Rendering poems/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_nav.html.erb:5
+  Rendered shared/_nav.html.erb (2.2ms)
+  Rendered poems/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 40ms (Views: 37.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/poems/about" for ::1 at 2019-07-11 16:23:03 -0400
+Processing by PoemsController#about as HTML
+  Rendering poems/about.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_nav.html.erb:5
+  Rendered shared/_nav.html.erb (1.8ms)
+  Rendered poems/about.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 33ms (Views: 30.6ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2019-07-11 16:23:04 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Gk7/yNFZY072D/lBApamxoocMTTFwW6zyR+OTtEaHv1uP8LkieoBPS+KdIBBNnazd0C7kEW9OH9nM9HDSdCOGw=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/lizheym/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2019-07-11 16:23:04 -0400
+Processing by PoemsController#index as HTML
+  Rendering poems/index.html.erb within layouts/application
+  Rendered shared/_nav.html.erb (4.5ms)
+  [1m[36mPoem Load (0.3ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" IS NULL[0m
+  ↳ app/views/poems/index.html.erb:19
+  Rendered poems/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 35ms (Views: 32.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-07-11 16:23:08 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered shared/_nav.html.erb (1.4ms)
+  Rendered users/shared/_links.html.erb (1.1ms)
+  Rendered users/sessions/new.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 54ms (Views: 45.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/poems/about" for ::1 at 2019-07-11 16:23:10 -0400
+Processing by PoemsController#about as HTML
+  Rendering poems/about.html.erb within layouts/application
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered poems/about.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 26ms (Views: 24.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/poems" for ::1 at 2019-07-11 16:23:11 -0400
+Processing by PoemsController#index as HTML
+  Rendering poems/index.html.erb within layouts/application
+  Rendered shared/_nav.html.erb (0.6ms)
+  [1m[36mPoem Load (0.3ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" IS NULL[0m
+  ↳ app/views/poems/index.html.erb:19
+  Rendered poems/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 31ms (Views: 27.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/poems/about" for ::1 at 2019-07-11 16:23:12 -0400
+Processing by PoemsController#about as HTML
+  Rendering poems/about.html.erb within layouts/application
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered poems/about.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 34ms (Views: 32.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-07-11 16:23:13 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered shared/_nav.html.erb (0.8ms)
+  Rendered users/shared/_links.html.erb (1.1ms)
+  Rendered users/sessions/new.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 43ms (Views: 41.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-07-11 16:23:16 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered /Users/lizheym/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/devise-4.6.1/app/views/devise/shared/_error_messages.html.erb (0.5ms)
+  Rendered users/shared/_links.html.erb (1.1ms)
+  Rendered users/registrations/new.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 46ms (Views: 44.4ms | ActiveRecord: 0.0ms)
+
+

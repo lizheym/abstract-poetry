@@ -2,7 +2,11 @@ require 'rubygems'
 
 class PoemsController < ApplicationController
   def index
-    @poems = Poem.all
+    @poems = Poem.where(:user_id => nil)
+  end
+
+  def my_poems
+    @poems = Poem.where(:user_id => current_user&.id)
   end
 
   def new
@@ -10,7 +14,7 @@ class PoemsController < ApplicationController
   end
 
   def create
-    @poem = Poem.new(params.require(:poem).permit(:title, :text))
+    @poem = Poem.new(params.require(:poem).permit(:title, :text).merge(:user_id => current_user&.id))
     @poem.update(:original => @poem.text)
 
     @poem.save
