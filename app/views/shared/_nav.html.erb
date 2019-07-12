@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light margin-top-20">
+  <a class="navbar-brand" href="/poems">OuLiPo</a>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+    <% if current_user != nil %>
+      <a class="nav-item nav-link" href="/poems/my_poems">My Poems</a>
+      <a class="nav-item nav-link" href="/poems/new">New Poem</a>
+    <% end %>
+      <a class="nav-item nav-link" href="/poems/about">About</a>
+    </div>
+  </div>
+  <div>
+    <% if user_signed_in? %>
+      <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+    <% else %>
+      <%= link_to('Login', new_user_session_path) %>
+    <% end %>
+  </div>
+</nav>

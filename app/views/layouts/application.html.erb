@@ -5,6 +5,20 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <% if notice %>
+      <p class="notice alert-success"><%= notice %></p>
+    <% end %>
+
+    <head>
+      <title><%= "OuLiPo" %></title>
+    </head>
+
+    <%= render :partial => "shared/nav" %>
+
+    <% if alert %>
+      <p class="alert alert-warning"><%= alert %></p>
+    <% end %>
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>

@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :poems do
     get "index"
     get "new"
     post "create"
     get "show"
+    get "my_poems", :on => :collection
     post "cycle_nouns"
     post "shuffle_nouns"
     post "cycle_adjectives"

@@ -1,10 +1,11 @@
-<h1 class="center my-3">Public poems</h1>
+<h1 class="center my-3">My poems</h1>
 
 <table class="table table-striped">
   <thead>
     <tr>
       <th scope="col">Title</th>
       <th scope="col">Text</th>
+      <th scope="col"></th>
       <th scope="col"></th>
     </tr>
   </thead>
@@ -17,6 +18,7 @@
           <%= simple_format(poem.text).html_safe %>
         </td>
         <td><%= link_to 'Show', poem_path(poem) %></td>
+        <td class="padding-sides"><%= link_to 'Delete', poem_delete_path(poem) %></td>
       </tr>
     <% end %>
   </tbody>

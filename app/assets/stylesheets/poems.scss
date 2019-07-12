@@ -32,10 +32,42 @@
   margin: 10px;
 }
 
+.margin-top-10 {
+  margin-top: 10px;
+}
+
+.margin-top-20 {
+  margin-top: 20px;
+}
+
+.margin-top-30 {
+  margin-top: 30px;
+}
+
 .poem {
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
   overflow: auto;
+}
+
+.notice {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.alert {
+  margin-top: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.custom-error {
+  margin-top: 10px;
+  padding-left: 10px;
+  padding-top: 20px;
+  padding-bottom: 10px;
 }
