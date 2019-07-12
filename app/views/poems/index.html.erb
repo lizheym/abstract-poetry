@@ -3,14 +3,16 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th scope="col">Title</th>
-      <th scope="col">Text</th>
+      <th scope="col" style="width: 10%"></th>
+      <th scope="col" style="width: 20%">Title</th>
+      <th scope="col" style="width: 70%">Text</th>
     </tr>
   </thead>
 
   <tbody>
     <% @poems.each do |poem| %>
       <tr>
+        <td></td>
         <td><%= poem.title %></td>
         <td class="poem">
           <%= simple_format(poem.text).html_safe %>

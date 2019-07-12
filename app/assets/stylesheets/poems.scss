@@ -5,10 +5,19 @@
 $color-aqua: #63b5ba;
 $color-salmon: #d67a60;
 $color-purple: #8a6894;
+$color-purple-light: #dcd3e3;
 
 
 .purple {
   color: $color-purple;
+}
+
+.purple-background {
+  background-color: $color-purple;
+}
+
+.purple-background-light {
+  background-color: $color-purple-light;
 }
 
 .margin-10 {
