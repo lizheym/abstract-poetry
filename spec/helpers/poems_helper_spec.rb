@@ -437,5 +437,25 @@ class PoemsHelperTest < ActionDispatch::IntegrationTest
         end
       end
     end
+
+    describe ".random_poem" do
+      let(:result) { PoemsHelper.random_poem }
+
+      context "" do
+        it "" do
+          expect(result).to eq("")
+        end
+      end
+    end
+
+    describe ".random_line" do
+      let(:result) { PoemsHelper.random_line }
+
+      context "" do
+        it "" do
+          expect(result).to eq("")
+        end
+      end
+    end
   end
 end

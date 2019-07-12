@@ -64,6 +64,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'engtagger'
 gem 'bootstrap'
 gem 'jquery-rails'
+gem 'nokogiri'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.8'
