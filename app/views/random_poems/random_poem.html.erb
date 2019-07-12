@@ -1,0 +1,11 @@
+<div class="container margin-top-30">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <div class="margin-vertical">
+        <%= link_to('Random Poem', random_poem_path(:generate => true), method: :get, :class => "btn btn-outline-secondary") %>
+      </div>
+
+      <%= simple_format(@text).html_safe %>
+    </div>
+  </div>
+</div>
