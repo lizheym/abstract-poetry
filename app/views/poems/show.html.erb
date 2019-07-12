@@ -68,7 +68,20 @@
       <tr>
         <td>
           <div class="margin-vertical">
-            <button onclick="showHideOriginalPoem()" class="btn btn-outline-secondary" id="showOriginalPoem">Show Original</button>
+            <button onclick="showHideOriginalPoem()" class="btn btn-outline-secondary btn-orange" id="showOriginalPoem">Show Original</button>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="margin-vertical">
+            <%= form_tag poem_toggle_public_path(@poem.id), method: :post  do %>
+              <% if @poem.public %>
+                <%= submit_tag 'Make private', :class => "btn btn-outline-secondary btn-blue" %>
+              <% else %>
+                <%= submit_tag 'Make public', :class => "btn btn-outline-secondary btn-blue" %>
+              <% end %>
+            <% end %>
           </div>
         </td>
       </tr>

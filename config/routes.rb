@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     post "shuffle_adjectives"
     post "cycle_lines"
     post "shuffle_lines"
+    post "toggle_public"
     get "about", :on => :collection
     get "delete"
   end

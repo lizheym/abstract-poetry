@@ -5,7 +5,6 @@
     <tr>
       <th scope="col">Title</th>
       <th scope="col">Text</th>
-      <th scope="col"></th>
     </tr>
   </thead>
 
@@ -16,7 +15,6 @@
         <td class="poem">
           <%= simple_format(poem.text).html_safe %>
         </td>
-        <td><%= link_to 'Show', poem_path(poem) %></td>
       </tr>
     <% end %>
   </tbody>
