@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light margin-top-20">
   <a class="navbar-brand" href="/poems">OuLiPo</a>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
@@ -8,9 +8,6 @@
     <% end %>
       <a class="nav-item nav-link" href="/poems/about">About</a>
     </div>
-  </div>
-  <div>
-    <%= current_user&.email %>
   </div>
   <div>
     <% if user_signed_in? %>

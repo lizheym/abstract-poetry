@@ -51,3 +51,23 @@
   padding: 0;
   overflow: auto;
 }
+
+.notice {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.alert {
+  margin-top: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.custom-error {
+  margin-top: 10px;
+  padding-left: 10px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
