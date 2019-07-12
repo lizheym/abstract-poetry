@@ -2,7 +2,7 @@ require 'rubygems'
 
 class PoemsController < ApplicationController
   def index
-    @poems = Poem.where(:user_id => nil)
+    @poems = Poem.where(:user_id => nil).or(Poem.where(:public =>  true))
   end
 
   def my_poems
@@ -30,6 +30,14 @@ class PoemsController < ApplicationController
     @poem.destroy
 
     redirect_to poems_path
+  end
+
+  def toggle_public
+    @poem = Poem.find(params[:poem_id])
+    @poem.update(:public => !@poem.public)
+
+    @poem.save
+    redirect_to @poem
   end
 
   def cycle_nouns

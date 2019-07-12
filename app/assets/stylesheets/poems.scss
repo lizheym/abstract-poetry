@@ -2,6 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$color-aqua: #63b5ba;
+$color-salmon: #d67a60;
+$color-purple: #8a6894;
+
+
+.purple {
+  color: $color-purple;
+}
+
 .margin-10 {
   margin-top: 20px;
   margin-left: 10%;
@@ -70,4 +79,24 @@
   padding-left: 10px;
   padding-top: 20px;
   padding-bottom: 10px;
+}
+
+.btn-blue:hover{
+  background-color: $color-aqua !important;
+  color: white !important;
+}
+
+.btn-blue {
+  border-color: $color-aqua !important;
+  color: $color-aqua !important;
+}
+
+.btn-orange:hover{
+  background-color: $color-salmon !important;
+  color: white !important;
+}
+
+.btn-orange {
+  border-color: $color-salmon !important;
+  color: $color-salmon !important;
 }
