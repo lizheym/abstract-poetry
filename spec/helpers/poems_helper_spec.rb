@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class PoemsHelperTest < ActionDispatch::IntegrationTest
+class PoemsHelperSpec < ActionDispatch::IntegrationTest
   RSpec.describe 'PoemsHelper' do
     describe ".cycle_nouns_in_text" do
       let(:result) { PoemsHelper.cycle_nouns_in_text(text) }
@@ -434,26 +434,6 @@ class PoemsHelperTest < ActionDispatch::IntegrationTest
 
         it "is false" do
           expect(result).to be false
-        end
-      end
-    end
-
-    describe ".random_poem" do
-      let(:result) { PoemsHelper.random_poem }
-
-      context "" do
-        it "" do
-          expect(result).to eq("")
-        end
-      end
-    end
-
-    describe ".random_line" do
-      let(:result) { PoemsHelper.random_line }
-
-      context "" do
-        it "" do
-          expect(result).to eq("")
         end
       end
     end

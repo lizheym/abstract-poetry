@@ -1,6 +1,4 @@
 require 'engtagger'
-require 'nokogiri'
-require 'open-uri'
 
 module PoemsHelper
   PLACEHOLDER = "XXXXXX".freeze
@@ -174,29 +172,5 @@ module PoemsHelper
 
   def self.is_alpha?(string)
     string.match?(/^[[:alpha:]]+$/)
-  end
-
-  def self.random_poem
-    poem = ""
-    10.times do
-      line = self.random_line
-      poem << line << "\n" if line.length < 100
-    end
-    poem
-  end
-
-  def self.random_line
-    random_url = 'https://www.poetryoutloud.org/poems-and-performance/random-poem'
-
-    html = open(random_url)
-    doc = Nokogiri::HTML(html)
-
-    poem = doc&.at_css('.bodyTxt_1')
-    poem_paragraph = poem&.at_css('p')
-    poem_text = poem_paragraph&.xpath('text()')&.text
-
-    return "" if poem_text.nil?
-
-    poem_text.split(/\R+/).shuffle.first
   end
 end
