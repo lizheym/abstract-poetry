@@ -17,5 +17,7 @@ Rails.application.routes.draw do
     get "delete"
   end
 
+  get "random_poem", :to => "random_poems#random_poem"
+
   root 'poems#index'
 end

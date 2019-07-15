@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class PoemsHelperTest < ActionDispatch::IntegrationTest
+class PoemsHelperSpec < ActionDispatch::IntegrationTest
   RSpec.describe 'PoemsHelper' do
     describe ".cycle_nouns_in_text" do
       let(:result) { PoemsHelper.cycle_nouns_in_text(text) }

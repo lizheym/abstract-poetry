@@ -10,7 +10,7 @@ class PoemsController < ApplicationController
   end
 
   def new
-    @poem = Poem.new
+    @poem = Poem.new(params.permit(:title, :text))
   end
 
   def create
