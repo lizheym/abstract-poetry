@@ -2,11 +2,11 @@ require 'rubygems'
 
 class PoemsController < ApplicationController
   def index
-    @poems = Poem.where(:user_id => nil).or(Poem.where(:public =>  true))
+    @poems = Poem.where(:user_id => nil).or(Poem.where(:public => true)).order(:updated_at => :desc)
   end
 
   def my_poems
-    @poems = Poem.where(:user_id => current_user&.id)
+    @poems = Poem.where(:user_id => current_user&.id).order(:updated_at => :desc)
   end
 
   def new
