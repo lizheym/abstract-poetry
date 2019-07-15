@@ -8,7 +8,32 @@ This project was inspired by an undergraduate poetry workshop I took with Zoë B
 
 The prompt was to then take a line from the mutated poem and write a poem based on it. The writer could then remove the original line or keep it.
 
-## Poem manipulation
+# Implementation
+
+## Accounts
+
+To personalize the experience, I added the ability to log in/out. I did so using the `devise` gem.
+
+The primary page shows poems created when not logged in ("public" poems).
+
+The "New Poem" and "My Poems" pages are only accessible by a logged-in user, and "My Poems" shows only poems from †he currently logged-in user.
+
+## Data models
+
+### Poem
+- Title
+- Text
+- Original
+- User id (foreign key)
+
+### User
+Attributes provided by `devise`, which include:
+- Email
+- Encrypted password
+
+# Poem manipulation
+
+![](https://github.com/lizheym/abstract-poetry/blob/master/New%20Poem.gif)
 
 Currently, the application has functionality to perform two actions:
 - cycling
@@ -59,23 +84,29 @@ That doesn't sound right!
 
 To fix this, I found all articles `["A", "a", "An", "an"]` from the tokenized words and looked ahead to the next word. If it started with a vowel, I corrected to "An"/"an", and otherwise I corrected to "A"/"a".
 
-## Accounts
+# Random Poem
 
-To personalize the experience, I added the ability to log in/out. I did so using the `devise` gem.
+![](https://github.com/lizheym/abstract-poetry/blob/master/RandomPoem.png)
 
-The primary page shows poems created when not logged in ("public" poems).
+An additional feature of this app allows for the generation of a "random" poem.
 
-The "New Poem" and "My Poems" pages are only accessible by a logged-in user, and "My Poems" shows only poems from †he currently logged-in user.
+The Poetry Out Loud website has a large database of poems, and has a link to a random poem from their database:
 
-## Data models
+![](https://github.com/lizheym/abstract-poetry/blob/master/PoetryOutLoudRandom.jpeg)
 
-### Poem
-- Title
-- Text
-- Original
-- User id (foreign key)
+I used the `open-uri` gem to retrieve the html based on the url.
+I then parsed the html with the `nokogiri` gem to retrieve the poem itself from the page.
 
-### User
-Attributes provided by `devise`, which include:
-- Email
-- Encrypted password
+The algorithm separates the poem into lines and selects a random line.
+This process is repeated 10 times, to retrieve 10 random lines
+
+## Edge case
+
+However, I noticed that some of the poems are prose poems, which don't have newlines. The algorithm without modification would insert a full prose poem into the middle of the generated poem. Instead, I only select lines that are fewer than 100 characters long.
+This means that the length of the poem will be 10 or fewer lines, rather than exactly 10 lines.
+
+# Public/private
+
+"My Poems" shows all the poems associated with the currenly logged in user. To share poems with others, one can select "make public," which allows that poem to be shown on the index page.
+
+![](https://github.com/lizheym/abstract-poetry/blob/master/Make%20Public.gif)
