@@ -1,15 +1,22 @@
-<div class="container margin-top-30">
-  <div class="row justify-content-center">
-    <div class="col-6">
-      <div class="margin-vertical">
-        <%= link_to('Random Poem', random_poem_path(:generate => true), method: :get, :class => "btn btn-outline-secondary") %>
-      </div>
+<div class="width-40 padding-top-30" style="margin: auto;">
+  <h1 class="center my-3">Random Poem Generation</h1>
 
-      <%= simple_format(@text).html_safe %>
-
-      <div class="margin-vertical">
-        <%= link_to('Save Poem', new_poem_path(:text => @text), method: :get, :class => "btn btn-outline-secondary") %>
-      </div>
-    </div>
+  <div class="purple-background-light" style="padding:20px; margin-top:20px; margin-bottom:20px; border-radius: 25px;">
+    <p>This tool retrieves up to 10 random poems, and then selects a random line from each poem. The lines are combined to create a new poem, displayed here.</p>
+    <p>This may take several seconds - we're searching the internet for poems!</p>
   </div>
+
+  <div class="center">
+    <%= link_to('Random Poem', random_poem_path(:generate => true), method: :get, :class => "btn btn-outline-secondary text-center") %>
+  </div>
+
+  <div class="margin-top-30">
+    <%= simple_format(@text).html_safe %>
+  </div>
+
+  <% unless @text.nil? %>
+    <div class="margin-vertical">
+      <%= link_to('Save Poem', new_poem_path(:text => @text), method: :get, :class => "btn btn-outline-secondary") %>
+    </div>
+  <% end %>
 </div>
