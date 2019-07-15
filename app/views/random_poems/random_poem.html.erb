@@ -6,6 +6,10 @@
       </div>
 
       <%= simple_format(@text).html_safe %>
+
+      <div class="margin-vertical">
+        <%= link_to('Save Poem', new_poem_path(:text => @text), method: :get, :class => "btn btn-outline-secondary") %>
+      </div>
     </div>
   </div>
 </div>
